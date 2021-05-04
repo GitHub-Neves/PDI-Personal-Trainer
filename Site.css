@@ -1,4 +1,4 @@
-﻿/* GERAR UMA PÁGINA HTML COM TODOS OS LINKS
+/* GERAR UMA PÁGINA HTML COM TODOS OS LINKS
     
 @{
     ViewBag.Title = "Nome da area";
@@ -39,4 +39,56 @@ body {
 /*Cor do navBar*/
 .navbarColor {
     background-color: #096623;
+}
+.navPersonal{
+    background-color: #d6f5d6;
+}
+/*Formatações dentro da div accountSettings para o perfil de utilizador*/
+.accountSettings .userProfile {
+    margin: 0 0 1rem 0;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.accountSettings .userProfile .userAvatar {
+    margin: 0 0 1rem 0;
+}
+
+.accountSettings .userProfile .userAvatar img {
+    width: 90px;
+    height: 90px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+
+.accountSettings .userProfile h5.userName {
+    margin: 0 0 0.5rem 0;
+}
+
+.accountSettings .date {
+    margin: 1rem 0 0 0;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/*Formatação do card do utilizador*/
+.card {
+    background: #272E48;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 0;
+    margin-bottom: 1rem;
+}
+
+/*Formatação da form do utilizador*/
+.form-control {
+    border: 1px solid #596280;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: .825rem;
+    background: #1A233A;
+    color: #bcd0f7;
 }
