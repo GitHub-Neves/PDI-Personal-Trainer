@@ -92,3 +92,17 @@ body {
     background: #1A233A;
     color: #bcd0f7;
 }
+/*Estilo dos links da navbar NUNO SILVANO PT Manter sempre esta ordem para formatos futuros*/
+a.NSPT{
+    color:white;
+}
+a.NSPT:active{
+    color:white;
+}
+a.NSPT:link{
+    color:white;
+    text-decoration:none;
+}
+a.NSPT:visited{
+    color:white;
+}
