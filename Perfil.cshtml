@@ -1,0 +1,141 @@
+﻿
+@{
+    ViewBag.Title = "Perfil";
+    Layout = "~/Views/Shared/_AreaPessoal.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfil</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a7c7c4a450.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div>
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="accountSettings">
+                                <div class="userProfile">
+                                    <div class="userAvatar">
+                                        <img src="~/Content/images/user.png" alt="Utilizador">
+                                    </div>
+                                    <h5 class="userName">Primeiro Ultimo</h5>
+                                </div>
+                                <div class="date">
+                                    <h5 class="mb-2 text-primary">Data de inscrição</h5>
+                                    <p>DD/MMM/YYYY</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="row ">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h6 class="mb-3 text-primary">Dados Pessoais</h6>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="fullName">Nome</label>
+                                        <input type="text" class="form-control" id="fullName" placeholder="Nome Completo">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="gmail.com">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="contact">Contacto</label>
+                                        <input type="text" class="form-control" id="contact" placeholder="9xx xxx xxx">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="age">Data de Nascimento</label>
+                                        <input type="date" class="form-control" id="birthDate" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="NIF">NIF</label>
+                                        <input type="url" class="form-control" id="NIF" placeholder="xxx xxx xxx">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h6 class="mb-3 text-primary">Morada</h6>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="Street">Rua</label>
+                                        <input type="text" class="form-control" id="street" placeholder="nome e nº da rua">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="locality">Localidade</label>
+                                        <input type="text" class="form-control" id="locality" placeholder="Localidade">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="city">Cidade</label>
+                                        <input type="text" class="form-control" id="city" placeholder="Cidade">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="postalCode">Código Postal</label>
+                                        <input type="text" class="form-control" id="postalCode" placeholder="xxxx-xxx">
+                                    </div>
+                                </div>                             
+                            </div>
+                            <div class="row ">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="text-right">
+                                        <button type="reset" id="reset" name="submit" class="btn btn-secondary">Cancel</button>
+                                        <button type="submit" id="confirm" name="submit" class="btn btn-success">Confirmar</button>
+                                        <button type="submit" id="edit" name="submit" class="btn btn-primary">Editar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script>
+        let select = document.getElementById('navProfile');
+
+        window.onload = function SelectNav() {
+            select.classList.add('navPersonal');
+        }
+    </script>
+</body>
+</html>
+
+
