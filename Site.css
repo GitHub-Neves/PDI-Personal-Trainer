@@ -29,7 +29,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <script>
 
-
     </script>
 </body>
 </html>
@@ -87,7 +86,7 @@ body {
 .form-control {
     border: 1px solid #596280;
     -webkit-border-radius: 2px;
-    -moz-border-radius: 2px; 
+    -moz-border-radius: 2px;
     border-radius: 2px;
     font-size: .825rem;
     background: #1A233A;
@@ -106,4 +105,36 @@ a.NSPT:link{
 }
 a.NSPT:visited{
     color:white;
+}
+/*Botões modal dos planos de nutrição*/
+.modalButton {
+    width: 100px;
+    font-weight: bold;
+    
+}
+
+/*Formatação do Modal das fichas do plano nutricional*/
+.questionSettings .yesNo {
+    border: 1px solid #596280;
+    font-size: 0.9rem;
+    width: 75px;
+    border-radius: 15px;
+}
+.questionSettings .maleFemale {
+    border: 1px solid #596280;
+    font-size: 0.9rem;
+    width: 110px;
+    border-radius: 15px;
+}
+.questionSettings .personHeight {
+    border: 1px solid #596280;
+    font-size: 1rem;
+    width: 75px;
+    border-radius: 15px;
+    text-align: center;
+}
+.questionSettings .optionalInformation {
+    border: 1px solid #596280;
+    font-size: 0.9rem;
+    border-radius: 10px;
 }
