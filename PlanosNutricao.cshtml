@@ -1,4 +1,4 @@
-﻿
+
 @{
     ViewBag.Title = "PlanosNutricao";
     Layout = "~/Views/Shared/_AreaPessoal.cshtml";
@@ -20,11 +20,11 @@
     <div class="container-fluid">
         <!--Informações clínicas-->
         <div class="row">
-            <div class="col">
+            <div class="col-Question mt-2">
                 <button type="button" class="btn btn-success modalButton" data-toggle="modal" data-target="#modalClinic">
                     <p class="font-weight-bold h6">Clínicas</p>
                 </button>
-
+                
                 <div class="modal" id="modalClinic">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -154,16 +154,16 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <p class="text-danger font-weight-bold">Preencher</p>
+            <div class="col-Question align-self-center ml-1">
+                <span id="" class="redDot"></span>
             </div>
-            <div class="col">
-                <p class="text-success font-weight-bold">Atualizado</p>
+            <div class="col-Question align-self-center ml-1">
+                <span id="" class="greenDot"></span>
             </div>
         </div>
         <!--Informações Treino-->
         <div class="row mt-2">
-            <div class="col">
+            <div class="col-Question">
                 <button type="button" class="btn btn-success modalButton" data-toggle="modal" data-target="#modalTraining">
                     <p class="font-weight-bold h6">Treino</p>
                 </button>
@@ -213,16 +213,16 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <p class="text-danger font-weight-bold">Preencher</p>
+            <div class="col-Question align-self-center ml-1">
+                <span id="" class="redDot"></span>
             </div>
-            <div class="col">
-                <p class="text-success font-weight-bold">Atualizado</p>
+            <div class="col-Question align-self-center ml-1">
+                <span id="" class="greenDot"></span>
             </div>
         </div>
         <!--Informações Refeições-->
         <div class="row mt-2">
-            <div class="col">
+            <div class="col-Question">
                 <button type="button" class="btn btn-success modalButton" data-toggle="modal" data-target="#modalMeals">
                     <p class="font-weight-bold h6 ">Refeições</p>
                 </button>
@@ -252,7 +252,7 @@
                                         Ao acordar
                                     </div>
                                     <div class="col-xl-8 col-lg-7 col-6">
-                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation"></textarea>
+                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição"></textarea>
                                     </div>
                                     <div class="col-xl-2 col-lg-2 col-3 align-self-center">
                                         <textarea id="" rows="1" class="w-100 mt-2 optionalInformation "></textarea>
@@ -262,7 +262,7 @@
                                         Pequeno-Almoço
                                     </div>
                                     <div class="col-xl-8 col-lg-7 col-6">
-                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation"></textarea>
+                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição"></textarea>
                                     </div>
                                     <div class="col-xl-2 col-lg-2 col-3 align-self-center">
                                         <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
@@ -272,7 +272,7 @@
                                         Meio da Manhã
                                     </div>
                                     <div class="col-xl-8 col-lg-7 col-6">
-                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation"></textarea>
+                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição"></textarea>
                                     </div>
                                     <div class="col-xl-2 col-lg-2 col-3 align-self-center">
                                         <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
@@ -282,7 +282,7 @@
                                         Almoço
                                     </div>
                                     <div class="col-xl-8 col-lg-7 col-6">
-                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation"></textarea>
+                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição"></textarea>
                                     </div>
                                     <div class="col-xl-2 col-lg-2 col-3 align-self-center">
                                         <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
@@ -292,7 +292,7 @@
                                         Meio da Tarde
                                     </div>
                                     <div class="col-xl-8 col-lg-7 col-6">
-                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation"></textarea>
+                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição"></textarea>
                                     </div>
                                     <div class="col-xl-2 col-lg-2 col-3 align-self-center">
                                         <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
@@ -302,7 +302,7 @@
                                         Jantar
                                     </div>
                                     <div class="col-xl-8 col-lg-7 col-6">
-                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation"></textarea>
+                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição"></textarea>
                                     </div>
                                     <div class="col-xl-2 col-lg-2 col-3 align-self-center">
                                         <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
@@ -312,7 +312,7 @@
                                         Ceia
                                     </div>
                                     <div class="col-xl-8 col-lg-7 col-6">
-                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation"></textarea>
+                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição"></textarea>
                                     </div>
                                     <div class="col-xl-2 col-lg-2 col-3 align-self-center">
                                         <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
@@ -322,7 +322,7 @@
                                         Alergias /Intolerâncias Alimentares
                                     </div>
                                     <div class="col-xl-8 col-lg-7 col-6">
-                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation"></textarea>
+                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Alimentos que não consiga possa"></textarea>
                                     </div>
                                     <div class="col-xl-2 col-lg-2 col-3 align-self-center">
                                         <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
@@ -332,7 +332,7 @@
                                         Mais Informações
                                     </div>
                                     <div class="col-xl-10 col-9">
-                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation"></textarea>
+                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Informação necessária que não foi possível escrever nas áreas anteriores"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -344,13 +344,105 @@
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <p class="text-danger font-weight-bold">Preencher</p>
+            <div class="col-Question align-self-center ml-1">
+                <span id="" class="redDot"></span>
             </div>
-            <div class="col">
-                <p class="text-success font-weight-bold">Atualizado</p>
+            <div class="col-Question align-self-center ml-1">
+                <span id="" class="greenDot"></span>
             </div>
         </div>
+        <!--Legenda-->
+        <div class="mt-3">
+            <p class="align-self-center" style="font-size:12px; color:red;"><span class="redDot-Label"></span>Questionário por responder</p>
+        </div>
+        <div class="">
+            
+            <p class="align-self-center" style="font-size:12px; color:green;"><span class="greenDot-Label"></span>Questionário respondido</p>
+        </div>
+    </div>
+    <p class="h4 mt-5">Planos de Nutrição</p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mt-2">
+                <div class="card text-center" style="width: 9rem;">
+                    <i class="fas fa-file-download mt-2" style="font-size:100px;"></i>
+                    <div class="card-body">
+                        <p>05/06/2021</p>
+                        <button type="button" class="btn btn-success modalButton" data-toggle="" data-target="">
+                            <p class="font-weight-bold h6 downloadButton">Download</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mt-2">
+                <div class="card text-center" style="width: 9rem;">
+                    <i class="fas fa-file-download mt-2" style="font-size:100px;"></i>
+                    <div class="card-body">
+                        <p>XX/XX/XXXX</p>
+                        <button type="button" class="btn btn-success modalButton" data-toggle="" data-target="">
+                            <p class="font-weight-bold h6 downloadButton">Download</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mt-2">
+                <div class="card text-center" style="width: 9rem;">
+                    <i class="fas fa-file-download mt-2" style="font-size:100px;"></i>
+                    <div class="card-body">
+                        <p>XX/XX/XXXX</p>
+                        <button type="button" class="btn btn-success modalButton" data-toggle="" data-target="">
+                            <p class="font-weight-bold h6 downloadButton">Download</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mt-2">
+                <div class="card text-center" style="width: 9rem;">
+                    <i class="fas fa-file-download mt-2" style="font-size:100px;"></i>
+                    <div class="card-body">
+                        <p>XX/XX/XXXX</p>
+                        <button type="button" class="btn btn-success modalButton" data-toggle="" data-target="">
+                            <p class="font-weight-bold h6 downloadButton">Download</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mt-2">
+                <div class="card text-center" style="width: 9rem;">
+                    <i class="fas fa-file-download mt-2" style="font-size:100px;"></i>
+                    <div class="card-body">
+                        <p>XX/XX/XXXX</p>
+                        <button type="button" class="btn btn-success modalButton" data-toggle="" data-target="">
+                            <p class="font-weight-bold h6 downloadButton">Download</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mt-2">
+                <div class="card text-center" style="width: 9rem;">
+                    <i class="fas fa-file-download mt-2" style="font-size:100px;"></i>
+                    <div class="card-body">
+                        <p>XX/XX/XXXX</p>
+                        <button type="button" class="btn btn-success modalButton" data-toggle="" data-target="">
+                            <p class="font-weight-bold h6 downloadButton">Download</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mt-2">
+                <div class="card text-center" style="width: 9rem;">
+                    <i class="fas fa-file-download mt-2" style="font-size:100px;"></i>
+                    <div class="card-body">
+                        <p>XX/XX/XXXX</p>
+                        <button type="button" class="btn btn-success modalButton" data-toggle="" data-target="">
+                            <p class="font-weight-bold h6 downloadButton">Download</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
     </div>
 
 
