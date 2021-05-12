@@ -1,4 +1,4 @@
-﻿/* GERAR UMA PÁGINA HTML COM TODOS OS LINKS
+/* GERAR UMA PÁGINA HTML COM TODOS OS LINKS
     
 @{
     ViewBag.Title = "Nome da area";
@@ -110,9 +110,16 @@ a.NSPT:visited{
 .modalButton {
     width: 100px;
     font-weight: bold;
+    align-self: center;
+    text-align: center;
     
 }
-
+.modalButton .downloadButton {
+        width: 77px;
+        font-weight: bold;
+        align-self: center;
+        text-align: center;
+}
 /*Formatação do Modal das fichas do plano nutricional*/
 .questionSettings .yesNo {
     border: 1px solid #596280;
@@ -137,4 +144,36 @@ a.NSPT:visited{
     border: 1px solid #596280;
     font-size: 0.9rem;
     border-radius: 10px;
+}
+.col-Question{
+    width:100px;
+}
+/*Formatação dos pontos na área de nutrição*/
+.redDot {
+    height: 10px;
+    width: 10px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+}
+.greenDot {
+    height: 10px;
+    width: 10px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+}
+.redDot-Label {
+    height: 5px;
+    width: 5px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+}
+.greenDot-Label {
+    height: 5px;
+    width: 5px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
 }
