@@ -1,5 +1,7 @@
 /* GERAR UMA PÁGINA HTML COM TODOS OS LINKS
     
+/* GERAR UMA PÁGINA HTML COM TODOS OS LINKS
+    
 @{
     ViewBag.Title = "Nome da area";
     Layout = "~/Views/Shared/_Navbar.cshtml";
@@ -40,8 +42,8 @@ body {
 .navbarColor {
     background-color: #096623;
 }
-.navPersonal{
-    background-color: #d6f5d6;
+.navPersonal {
+    background-color: #5E96E5;
 }
 /*Formatações dentro da div accountSettings para o perfil de utilizador*/
 .accountSettings .userProfile {
@@ -176,4 +178,55 @@ a.NSPT:visited{
     background-color: green;
     border-radius: 50%;
     display: inline-block;
+}
+/*Side Navbar para área pessoal*/
+#sidebar-wrapper {
+    z-index: 1;
+    position: absolute;
+    width: 250px;
+    height: 100%;
+    overflow-y: hidden;
+    background: #2C3E50;
+}
+/* Ocupar o ecrã inteiro */
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding-left: 250px;
+    padding-top:10px;
+}
+/* Mudar largura sidebar 0 to 250px */
+#wrapper.menuHide #sidebar-wrapper {
+    width: 0px;
+}
+/* Diminuir o padding 250px */
+#wrapper.menuHide #page-content-wrapper {
+    padding: 15px ;
+}
+/* Formato da sidebar */
+.sidebar-nav {
+    padding: 0;
+    list-style: none;
+}
+    .sidebar-nav li {
+        text-indent: 20px;
+        line-height: 40px;
+    }
+/*Estilo dos links da SIDE BAR AREA PESSOAL Manter*/
+a.SBAP {
+    color: orange;
+    font-weight: bold;
+}
+
+a.SBAP:active {
+    color: orange;
+}
+
+a.SBAP:link {
+    color: orange;
+    text-decoration: none;
+}
+
+a.SBAP:visited {
+    color: orange;
 }
