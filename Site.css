@@ -1,7 +1,5 @@
 /* GERAR UMA PÁGINA HTML COM TODOS OS LINKS
     
-/* GERAR UMA PÁGINA HTML COM TODOS OS LINKS
-    
 @{
     ViewBag.Title = "Nome da area";
     Layout = "~/Views/Shared/_Navbar.cshtml";
@@ -38,12 +36,24 @@
 
 body {
 }
-/*Cor do navBar*/
+/*Cores dos menus de navegação*/
 .navbarColor {
     background-color: #096623;
 }
+.navbarColor-Front {
+    color: #096623;
+}
 .navPersonal {
     background-color: #5E96E5;
+}
+.navbarPersonal-Front {
+    color: #5E96E5;
+}
+.navPersonal-Backgroung {
+    background-color:#2C3E50;
+}
+.navPersonal-Backgroung-Front {
+    color: #2C3E50;
 }
 /*Formatações dentro da div accountSettings para o perfil de utilizador*/
 .accountSettings .userProfile {
@@ -229,4 +239,64 @@ a.SBAP:link {
 
 a.SBAP:visited {
     color: orange;
+}
+/*Form submissão de medidas*/
+#submitMesures label {
+    font-weight: bold;
+}
+#submitPhotos label {
+    font-weight: bold;
+}
+#submitWheight label {
+    font-weight: bold;
+}
+/*Teste dos dropdown*/
+.dropMesures {
+    margin-bottom:180px;
+}
+/*Formato do chat*/
+#chatBox {
+    max-width: 1200px;
+    height: 500px;
+    overflow-y: scroll;
+    border: 2px solid #2C3E50;
+}
+#messageBox {
+    max-width: 1200px;
+    border: 2px solid #2C3E50;
+}
+.nsFormat {
+    margin-left: 5px;
+    margin-top: 5px;
+    color: green;
+    font-weight: bold;
+    font-size: 15px;
+}
+.nsFormat-Text {
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 20px;
+}
+.meFormat{
+    margin-left: 82px;
+    margin-top: 5px;
+    color:darkblue;
+    font-weight:bold;
+    font-size: 15px;
+}
+.meFormat-Text {
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 20px;
+}
+.chatTime {
+    margin-left: 5px;
+    margin-top: 5px;
+    float: right;
+    color: gray;
+    font-size: 10px;
+}
+#messageButton {
+    outline: 2px solid #2C3E50;
+    font-weight:600;
 }
