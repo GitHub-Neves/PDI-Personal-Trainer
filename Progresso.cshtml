@@ -1,0 +1,388 @@
+﻿
+@{
+    ViewBag.Title = "Progresso";
+    Layout = "~/Views/Shared/_AreaPessoal.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nome da area</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a7c7c4a450.js" crossorigin="anonymous"></script>
+    <!--Google charts script *Ver depois com tempo-->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['line'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            var data = new google.visualization.DataTable();
+            data.addColumn('number', 'Evolução do Peso');
+            data.addColumn('number', 'Peso');
+            data.addColumn('number', 'Massa Gorda');
+            data.addColumn('number', 'Massa Magra');
+
+            data.addRows([
+                [1, 80.5, 29.3, 68.4],
+                [2, 75.7, 24.1, 72.5],
+                [3, 73.1, 22.1, 76.5],
+                [4, 70.5, 20.1, 78.3],
+                [5, 69.7, 19.1, 79.7],
+                [6, 68.8, 18.1, 81.3]
+            ]);
+
+            var options = {             
+                width: 1200,
+                height: 500,
+                axes: {
+                    x: {
+                        0: { side: 'bottom' }
+                    }
+                }
+            };
+
+            var chart = new google.charts.Line(document.getElementById('line_top_x'));
+
+            chart.draw(data, google.charts.Line.convertOptions(options));
+        }
+    </script>
+</head>
+<body>
+    <h5>Instruções</h5>
+    <!--INSTRUÇÕES-->
+    <!-- MODAL MEDIDAS -->
+    <button type="button" class="btn btn-success modalButton mt-2 mr-3" data-toggle="modal" data-target="#modalMesures">
+        <p class="font-weight-bold h6">Medidas</p>
+    </button>
+    <div class="modal fade" id="modalMesures" tabindex="-1" aria-labelledby="modalMesures" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Como fazer as medições</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-4 mt-3">
+                            <img src="~/Content/images/braço.png" class="w-100" alt="">
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mt-3">
+                            <img src="~/Content/images/abdominal.png" class="w-100" alt="">
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mt-3">
+                            <img src="~/Content/images/peitoral.png" class="w-100" alt="">
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mt-3">
+                            <img src="~/Content/images/peitoralMulher.png" class="w-100" alt="">
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mt-3">
+                            <img src="~/Content/images/coxa.png" class="w-100" alt="">
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mt-3">
+                            <img src="~/Content/images/gemeo.png" class="w-100" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL FOTOS -->
+    <button type="button" class="btn btn-success modalButton mt-2" data-toggle="modal" data-target="#modalPhotos">
+        <p class="font-weight-bold h6">Fotos</p>
+    </button>
+    <div class="modal fade" id="modalPhotos" tabindex="-1" aria-labelledby="modalPhotos" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Como tirar fotos de progresso</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-4 mt-3">
+                            <img src="~/Content/images/fotoFrente.png" class="w-100" alt="Foto de frente">
+                            <p class="text-center h5">Foto de frente</p>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mt-3">
+                            <img src="~/Content/images/fotoLado.png" class="w-100" alt="Foto de lado">
+                            <p class="text-center h5">Foto de lado</p>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4 mt-3">
+                            <img src="~/Content/images/fotoTras.png" class="w-100" alt="Foto de trás">
+                            <p class="text-center h5">Foto de trás</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--INSERIR DADOS-->
+    <h4 class="mt-3">Registos</h4>
+    <!--Medidas-->
+    <div id="dropdownMedidas" class="dropdown">
+        <button class="btn dropdown-toggle " type="button" id="dropdownMenu-Mesures" style="color:none;">
+            <span class="h6"><i class="fas fa-ruler mr-2 navPersonal-Backgroung-Front"></i>Registar Medidas</span>
+        </button>
+        <div id="mesuresForm" class="d-none">
+            <form id="submitMesures" class="p-3">
+                <div class="row">
+                    <div class="form-group col-12 col-sm-6 col-md-4 col-lg">
+                        <label>Braço</label>
+                        <input type="number" class="form-control" id="" min="0" placeholder="xx,xx" step=".01">
+                    </div>
+                    <div class="form-group col-12 col-sm-6 col-md-4 col-lg">
+                        <label>Abdominal</label>
+                        <input type="number" class="form-control" id="" min="0" placeholder="xxx,xx">
+                    </div>
+                    <div class="form-group col-12 col-sm-6 col-md-4 col-lg">
+                        <label>Peitoral</label>
+                        <input type="number" class="form-control" id="" min="0" placeholder="xxx,xx">
+                    </div>
+                    <div class="form-group col-12 col-sm-6 col-md-4 col-lg">
+                        <label>Coxa</label>
+                        <input type="number" class="form-control" id="" min="0" placeholder="xxx,xx">
+                    </div>
+                    <div class="form-group col-12 col-sm-6 col-md-4 col-lg">
+                        <label>Gémeo</label>
+                        <input type="number" class="form-control" id="" min="0" placeholder="xx,xx">
+                    </div>
+                </div>
+                <!--NÃO ESQUECER DE SUBMETER TAMBÉM A DATA DE QUANDO FOI SUBMETIDO-->
+                <button type="submit" class="btn btn-success modalButton">
+                    <p class="font-weight-bold h6">Submeter</p>
+                </button>
+            </form>
+        </div>
+    </div>
+    <!--Fotos-->
+    <div class="dropdown mt-2">
+        <button class="btn dropdown-toggle " type="button" id="dropdownMenu-Photos" style="color:none;">
+            <span class="h6"><i class="fas fa-camera-retro navPersonal-Backgroung-Front" style="margin-right:12px;"></i>Fotos</span>
+        </button>
+        <div id="photoForm" class="d-none">
+            <form id="submitPhotos" class="p-3">
+                <div class="row">
+                    <div class="form-group col-12 col-md-6 col-lg">
+                        <label>Foto Frontal</label>
+                        <input class="form-control" type="file" id="frontalPhoto" name="imagemFrontal" accept="image/*">
+                    </div>
+                    <div class="form-group col-12 col-md-6 col-lg">
+                        <label>Foto Lateral</label>
+                        <input class="form-control" type="file" id="lateralPhoto" name="imagemFrontal" accept="image/*">
+                    </div>
+                    <div class="form-group col-12 col-md-6 col-lg">
+                        <label>Foto Traseira</label>
+                        <input class="form-control" type="file" id="backPhoto" name="imagemFrontal" accept="image/*">
+                    </div>
+                </div>
+                <!--NÃO ESQUECER DE SUBMETER TAMBÉM A DATA DE QUANDO FOI SUBMETIDO-->
+                <button type="submit" class="btn btn-success modalButton">
+                    <p class="font-weight-bold h6">Submeter</p>
+                </button>
+            </form>
+        </div>
+    </div>
+    <!--Pesagem-->
+    <div class="dropdown mt-2">
+        <button class="btn dropdown-toggle" type="button" id="dropdownMenu-Weight" style="color:none;">
+            <span class="h6"><i class="fas fa-weight navPersonal-Backgroung-Front" style="margin-right:12px;"></i>Pesagem</span>
+        </button>
+        <div id="weightFrom" class="d-none">
+            <form id="submitWheight" class="p-3">
+                <div class="row">
+                    <div class="form-group col-12 col-sm-6 col-md-4 col-lg">
+                        <label>Peso (Kg)</label>
+                        <input type="number" class="form-control" id="" min="0" placeholder="xx,xx" step=".01">
+                    </div>
+                    <div class="form-group col-12 col-sm-6 col-md-4 col-lg">
+                        <label>Massa Gorda (%)</label>
+                        <input type="number" class="form-control" id="" min="0" placeholder="opcional" step=".01">
+                    </div>
+                    <div class="form-group col-12 col-sm-6 col-md-4 col-lg">
+                        <label>Massa Magra (%)</label>
+                        <input type="number" class="form-control" id="" min="0" placeholder="opcional" step=".01">
+                    </div>
+                </div>
+                <!--NÃO ESQUECER DE SUBMETER TAMBÉM A DATA DE QUANDO FOI SUBMETIDO-->
+                <button type="submit" class="btn btn-success modalButton">
+                    <p class="font-weight-bold h6">Submeter</p>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!--EVOLUÇÃO-->
+    <h4 class="mt-3">Evolução</h4>
+    <!-- MODAL EVOLUÇÃO DO PESO -->
+    <button type="button" class="btn mt-2 mr-3" data-toggle="modal" data-target="#weightRecord">
+        <span class="h6">Peso<i class="ml-2 fas fa-file-signature navPersonal-Backgroung-Front"></i></span>
+    </button>
+    <div class="modal fade" id="weightRecord" tabindex="-1" aria-labelledby="weightRecord" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Evolução do Peso</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Data</th>
+                                <th scope="col">Peso (Kg)</th>
+                                <th scope="col">% Massa Gorda</th>
+                                <th scope="col">% Massa Magra</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">25/05/2021</th>
+                                <td>80,5</td>
+                                <td>29.3</td>
+                                <td>68.4</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">31/07/2021</th>
+                                <td>75,7</td>
+                                <td>24,1</td>
+                                <td>72,5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL EVOLUÇÃO DO PESO -->
+    <button type="button" class="btn mt-2 mr-3" data-toggle="modal" data-target="#mesuresRecord">
+        <span class="h6">Medições<i class="ml-2 fas fa-file-signature navPersonal-Backgroung-Front"></i></span>
+    </button>
+    <div class="modal fade" id="mesuresRecord" tabindex="-1" aria-labelledby="weightRecord" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Historial de Medições</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Data</th>
+                                <th scope="col">Braço (cm)</th>
+                                <th scope="col">Abdominal (cm)</th>
+                                <th scope="col">Peitoral (cm)</th>
+                                <th scope="col">Coxa (cm)</th>
+                                <th scope="col">Gémeo (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="col">15/05/2021</th>
+                                <td>34,5</td>
+                                <td>75,6</td>
+                                <td>80,5</td>
+                                <td>64</td>
+                                <td>36,2</td>
+                            </tr>
+                            <tr>
+                                <th scope="col">20/06/2021</th>
+                                <td>35</td>
+                                <td>76,4</td>
+                                <td>81,2</td>
+                                <td>63,4</td>
+                                <td>36,8</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL EVOLUÇÃO DAS FOTOS -->
+    <button type="button" class="btn mt-2 mr-3" data-toggle="modal" data-target="#photoRecord">
+        <span class="h6">Fotos<i class="ml-2 far fa-images navPersonal-Backgroung-Front"></i></span>
+    </button>
+    <div class="modal fade" id="photoRecord" tabindex="-1" aria-labelledby="weightRecord" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Evolução do Aspeto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col">Data</th>
+                                <th scope="col">Frontal</th>
+                                <th scope="col">Lateral</th>
+                                <th scope="col">Traseira</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">25/05/2021</th>
+                                <td><img src="~/Content/images/fotoFrente.png" class="w-100" alt="Foto de frente"></td>
+                                <td><img src="~/Content/images/fotoLado.png" class="w-100" alt="Foto de lado"></td>
+                                <td><img src="~/Content/images/fotoTras.png" class="w-100" alt="Foto de trás"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">31/07/2021</th>
+                                <td><img src="~/Content/images/fotoFrente.png" class="w-100" alt="Foto de frente"></td>
+                                <td><img src="~/Content/images/fotoLado.png" class="w-100" alt="Foto de lado"></td>
+                                <td><img src="~/Content/images/fotoTras.png" class="w-100" alt="Foto de trás"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Local do gráfico-->
+    <div id="line_top_x" class="w-100 mt-4 d-none"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script>
+        let select = document.getElementById('navProgress');
+        window.onload = function SelectNav() {
+            select.classList.add('navPersonal');
+        }
+        /*Abrir e fechar Form Medidas*/
+        $("#dropdownMenu-Mesures").click(function (e) {
+            e.preventDefault();
+            $("#mesuresForm").toggleClass("d-none");
+        });
+        /*Abrir e fechar Form Fotos*/
+        $("#dropdownMenu-Photos").click(function (e) {
+            e.preventDefault();
+            $("#photoForm").toggleClass("d-none");
+        });
+        /*Abrir e fechar Form Pesagem*/
+        $("#dropdownMenu-Weight").click(function (e) {
+            e.preventDefault();
+            $("#weightFrom").toggleClass("d-none");
+        });
+    </script>
+</body>
+</html>
+
