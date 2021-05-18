@@ -24,7 +24,7 @@
                 <button type="button" class="btn btn-success modalButton" data-toggle="modal" data-target="#modalClinic">
                     <p class="font-weight-bold h6">Clínicas</p>
                 </button>
-                
+
                 <div class="modal" id="modalClinic">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -82,67 +82,68 @@
                                             <option value="nao">Não</option>
                                         </select>
                                     </div>
+                                    <!--TRANSPLANTES-->
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         Transplantes:
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
-                                        <select class="custom-select yesNo mt-2">
+                                        <select id="tran" onchange="transplant(this.value)" class="custom-select yesNo mt-2">
                                             <option selected></option>
                                             <option value="sim">Sim</option>
                                             <option value="nao">Não</option>
                                         </select>
                                     </div>
                                     <div class="col-12">
-                                        <textarea id="" rows="2" class="w-100 mt-2 optionalInformation"></textarea>
+                                        <textarea id="textTransplant" rows="2" class="w-100 mt-2 optionalInformation d-none"></textarea>
                                     </div>
-
+                                    <!--PROBLEMAS CARDIACOS-->
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         Problemas cardíacos:
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
-                                        <select class="custom-select yesNo mt-2">
+                                        <select id="car" onchange="cardiacProblems(this.value)" class="custom-select yesNo mt-2">
                                             <option selected></option>
                                             <option value="sim">Sim</option>
                                             <option value="nao">Não</option>
                                         </select>
                                     </div>
                                     <div class="col-12">
-                                        <textarea id="" rows="2" class="w-100 mt-2 optionalInformation"></textarea>
+                                        <textarea id="textCardiac" rows="2" class="w-100 mt-2 optionalInformation d-none"></textarea>
                                     </div>
-
+                                    <!--PROBLEMAS ARTICULAÇOES-->
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         Problemas articulares/musculares:
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
-                                        <select class="custom-select yesNo mt-2">
+                                        <select id="probArt" onchange="problemsArt(this.value)" class="custom-select yesNo mt-2">
                                             <option selected></option>
                                             <option value="sim">Sim</option>
                                             <option value="nao">Não</option>
                                         </select>
                                     </div>
                                     <div class="col-12">
-                                        <textarea id="" rows="2" class="w-100 mt-2 optionalInformation"></textarea>
+                                        <textarea id="textProblems-Art" rows="2" class="w-100 mt-2 optionalInformation d-none"></textarea>
                                     </div>
-
+                                    <!--OUTROS-->
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         Outros:
                                     </div>
                                     <div class="col-12">
-                                        <textarea id="" rows="2" class="w-100 mt-2 optionalInformation"></textarea>
+                                        <textarea id="" rows="2" class="w-100 mt-2 optionalInformation" placeholder="Problemas que queira mencionar"></textarea>
                                     </div>
-
+                                    <!--MEDICAÇÃO-->
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         Toma medicação regularmente?
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
-                                        <select class="custom-select yesNo mt-2">
+                                        <select id="med" onchange="medication(this.value)" class="custom-select yesNo mt-2">
                                             <option selected></option>
-                                            <option value="sim" onselect="medicationYes">Sim</option>
-                                            <option value="nao" onselect="medicationNo">Não</option>
+                                            <option value="sim">Sim</option>
+                                            <option value="nao">Não</option>
                                         </select>
                                     </div>
                                     <div class="col-12">
-                                        <textarea id="textMedication" rows="2" class="w-100 mt-2 optionalInformation"></textarea>
+                                        <textarea id="textMedication" rows="2" class="w-100 mt-2 optionalInformation d-none" placeholder="Qual?"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -356,93 +357,28 @@
             <p class="align-self-center" style="font-size:12px; color:red;"><span class="redDot-Label"></span>Questionário por responder</p>
         </div>
         <div class="">
-            
+
             <p class="align-self-center" style="font-size:12px; color:green;"><span class="greenDot-Label"></span>Questionário respondido</p>
         </div>
     </div>
-    <p class="h4 mt-5">Planos de Nutrição</p>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mt-2">
-                <div class="card text-center" style="width: 9rem;">
-                    <i class="fas fa-file-download mt-2" style="font-size:100px;"></i>
-                    <div class="card-body">
-                        <p>05/06/2021</p>
-                        <button type="button" class="btn btn-success modalButton" data-toggle="" data-target="">
-                            <p class="font-weight-bold h6 downloadButton">Download</p>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mt-2">
-                <div class="card text-center" style="width: 9rem;">
-                    <i class="fas fa-file-download mt-2" style="font-size:100px;"></i>
-                    <div class="card-body">
-                        <p>XX/XX/XXXX</p>
-                        <button type="button" class="btn btn-success modalButton" data-toggle="" data-target="">
-                            <p class="font-weight-bold h6 downloadButton">Download</p>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mt-2">
-                <div class="card text-center" style="width: 9rem;">
-                    <i class="fas fa-file-download mt-2" style="font-size:100px;"></i>
-                    <div class="card-body">
-                        <p>XX/XX/XXXX</p>
-                        <button type="button" class="btn btn-success modalButton" data-toggle="" data-target="">
-                            <p class="font-weight-bold h6 downloadButton">Download</p>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mt-2">
-                <div class="card text-center" style="width: 9rem;">
-                    <i class="fas fa-file-download mt-2" style="font-size:100px;"></i>
-                    <div class="card-body">
-                        <p>XX/XX/XXXX</p>
-                        <button type="button" class="btn btn-success modalButton" data-toggle="" data-target="">
-                            <p class="font-weight-bold h6 downloadButton">Download</p>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mt-2">
-                <div class="card text-center" style="width: 9rem;">
-                    <i class="fas fa-file-download mt-2" style="font-size:100px;"></i>
-                    <div class="card-body">
-                        <p>XX/XX/XXXX</p>
-                        <button type="button" class="btn btn-success modalButton" data-toggle="" data-target="">
-                            <p class="font-weight-bold h6 downloadButton">Download</p>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mt-2">
-                <div class="card text-center" style="width: 9rem;">
-                    <i class="fas fa-file-download mt-2" style="font-size:100px;"></i>
-                    <div class="card-body">
-                        <p>XX/XX/XXXX</p>
-                        <button type="button" class="btn btn-success modalButton" data-toggle="" data-target="">
-                            <p class="font-weight-bold h6 downloadButton">Download</p>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4 col-6 mt-2">
-                <div class="card text-center" style="width: 9rem;">
-                    <i class="fas fa-file-download mt-2" style="font-size:100px;"></i>
-                    <div class="card-body">
-                        <p>XX/XX/XXXX</p>
-                        <button type="button" class="btn btn-success modalButton" data-toggle="" data-target="">
-                            <p class="font-weight-bold h6 downloadButton">Download</p>
-                        </button>
-                    </div>
-                </div>
-            </div>
+    <p class="h4 mt-5 mb-2">Planos de Nutrição</p>
+    
+    <div class="row">
+        @{ int i = 1;
+            while (i < 18)
+            {
 
-        </div>
-        
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 text-center mt-2">
+                    <i class="fas fa-file-signature mt-2" style="font-size:100px;"></i>
+                    <p>05/06/2021</p>
+                    <button type="button" class="btn btn-success modalButton" data-toggle="" data-target="">
+                        <p class="font-weight-bold h6 downloadButton">Download</p>
+                    </button>
+                </div>
+
+                i++;
+            }
+        }
     </div>
 
 
@@ -458,16 +394,48 @@
             select.classList.add('navPersonal');
         }
         /*Fazer aparecer e desaparecer as text areas*/
-        
-        function medicationYes() {
-            let medication = document.getElementById('textMedication');
-            medication.classList.remove('d-none');
+        /*Medicação*/
+        function medication(val) {
+            let med = document.getElementById('textMedication');
+            if (val == "sim") {
+                med.classList.remove('d-none');
+            }
+            else {
+                med.classList.add('d-none');
+            }
         }
-        function medicationNo() {
-            let medication = document.getElementById('textMedication');
-            medication.classList.add('d-none');
+        /*Problemas articulares*/
+        function problemsArt(val) {
+            let prob = document.getElementById('textProblems-Art');
+            if (val == "sim") {
+                prob.classList.remove('d-none');
+            }
+            else {
+                let prob = document.getElementById('textProblems-Art');
+                prob.classList.add('d-none');
+            }
         }
+        /*Problemas cardiacos*/
+        function cardiacProblems(val) {
+            let car = document.getElementById('textCardiac');
+            if (val == "sim") {
+                car.classList.remove('d-none');
+            }
+            else {
+                car.classList.add('d-none');
+            }
+        }
+        /*Transplantes*/
+        function transplant(val) {
+            let tran = document.getElementById('textTransplant');
+            if (val == "sim") {
+                tran.classList.remove('d-none');
+            }
+            else {
+                tran.classList.add('d-none');
+            }
+        }
+
     </script>
 </body>
 </html>
-
