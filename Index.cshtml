@@ -1,7 +1,6 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_TrainerNavbar.cshtml";
+    Layout = "~/Views/Shared/_Navbar.cshtml";
 }
 
 <!DOCTYPE html>
@@ -9,111 +8,96 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Index</title>
+    <title>Nome da area</title>
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/a7c7c4a450.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-    <div class="" style="margin-top:80px;">
-        <h3 class="text-center">Gestão de clientes</h3>
-    </div>
-    <!--PESQUISA DE CLIENTES-->
-    <form action="" class="mx-auto mt-5" style="width:1000px;">
-        <div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-            <div class="input-group">
-                <input type="search" id="searchClient" placeholder="Nome do cliente" onkeyup="mySearch()" aria-describedby="" class="form-control  bg-light border-primary">
-                <div class="input-group-append">
-                    <button id="button-addon1" type="submit" class="btn btn-link text-primary btn-outline-primary"><i class="fa fa-search"></i></button>
-                </div>
+    <div class="container pt-2 mt-4">
+        <div class="row-cols-2 conteudo border border-info pt-2">
+            <div class="col">
+                Nuno Silvano é um ex-ginasta de alta competição com múltiplas participações em competições europeias e mundiais, licenciado em Ciências do Desporto e Educação Física pela universidade de Coimbra. <br />
+                Com 24 e proveniente de Coimbra, Nuno t
+                - 24 anos <br>
+                - Coimbra <br>
+                - Ex-ginasta de alta competição com múltiplas participações em competições europeias e mundiais
+                - Licenciado em Ciências do Desporto e Educação Física pela universidade de Coimbra
+            </div>
+            <div class="col">
+                <img src="~/Content/images/coxa.png" alt="Alternate Text" />
             </div>
         </div>
-    </form>
-    <!--MENU DE CLIENTES-->
-    @{
-        int i = 0, aux = 1;
-        var idDropdown = "clientForm";
-        while (i < 15)
-        {
-            var dropdownMenuClient = idDropdown + aux;
-
-            <div class="pl-4 pr-4 mt-3">
-                <div id="clientDiv" class="dropdown buttonTrainer-Format">
-                    <button class="btn w-100 text-white" type="button" id="" onclick="openDropdown('@dropdownMenuClient');">
-                        <span class="h6 float-left"><img class="userImage" src="~/Content/images/user.png" alt="Utilizador" style="border:1px solid white;"></span> 
-                        <p class="float-left ml-4 mt-4 textFormat">Carlos Santos</p>
-                        <span class="float-right mt-3 textFormat-Icon"><i class="fas fa-plus-square ml-4 " style="background-color:#41566C; color:#E2EEFF"></i></span>
-                    </button>
-                    <div id="@dropdownMenuClient" class="d-none text-center dropClient-Format">
-                        <form id="submitMesures" class="p-3">
-                            <div class="row">
-                                    <div class="form-group col-12 col-sm-6 col-md-4 col-lg dropText-Format">
-                                        <i class="fas fa-user-circle navPersonal-Backgroung-Front mr-1"></i>@Html.ActionLink("Perfil", "ClientePerfil", "Trainer", new { @class = "DDCT" })
-                                    </div>
-                                    <div class="form-group col-12 col-sm-6 col-md-4 col-lg dropText-Format">
-                                        <i class="fas fa-user-circle navPersonal-Backgroung-Front mr-1"></i>@Html.ActionLink("Treinos", "ClienteTreinos", "Trainer", new { @class = "DDCT" })
-                                    </div>
-                                    <div class="form-group col-12 col-sm-6 col-md-4 col-lg dropText-Format">
-                                        <i class="fas fa-user-circle navPersonal-Backgroung-Front mr-1"></i>@Html.ActionLink("Planos de Nutrição", "ClienteNutricao", "Trainer", new { @class = "DDCT" })
-                                    </div>
-                                    <div class="form-group col-12 col-sm-6 col-md-4 col-lg dropText-Format">
-                                        <i class="fas fa-user-circle navPersonal-Backgroung-Front mr-1"></i>@Html.ActionLink("Progresso", "ClienteProgresso", "Trainer", new { @class = "DDCT" })
-                                    </div>
-                                    <div class="form-group col-12 col-sm-6 col-md-4 col-lg dropText-Format">
-                                        <i class="fas fa-user-circle navPersonal-Backgroung-Front mr-1"></i>@Html.ActionLink("Mensagens", "ClienteMensagens", "Trainer", new { @class = "DDCT" })
-                                    </div>
-                            </div>
-                        </form>
-                    </div>
+    </div>
+    <hr class="w-100" />
+    <div class="container pt-2 mt-4">
+        <div class="row-cols-1 conteudo border border-info pt-2">
+            <div class="col">
+                - Nuno Silvano <br>
+                - 24 anos <br>
+                - Coimbra <br>
+                - Ex-ginasta de alta competição com múltiplas participações em competições europeias e mundiais <br>
+                - Licenciado em Ciências do Desporto e educação Física pela universidade de Coimbra
+            </div>
+        </div>
+    </div>
+    <hr class="w-100" style="color:black" />
+    <div class="w-100 pt-2 mt-4">
+        <div class="row pt-2">
+            <div class="col">
+                <div class="w-100 justify-content-center"><p style="text-decoration:overline"><b>MAPA</b></p></div>
+                <div class="d-flex pl-1">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1862.9686363305425!2d-8.434574!3d40.1998984!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-PT!2spt!4v1621529937342!5m2!1spt-PT!2spt" width="480" height="360" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-            i++;
-            aux++;
-        }
-    }
-
-
-
-
+            <div class="col">
+                <p style="text-decoration:overline"><b>CONTACTOS</b></p>
+                <div class="text-wrap">
+                    <div>silvanoworks@gmail.com<br></div>
+                    <div><i class="fas fa-phone"></i> <strong><span style="font-size:18px">916 932 765</span></strong></div>
+                    <div>
+                        <i class="fab fa-instagram img-thumbnail"></i>
+                        <strong><a href="https://www.instagram.com/nuno_silvano/"><span style="font-family:Verdana,Geneva,sans-serif"><span style="font-size:16px"><strong>Instagram</strong></span></span></a></strong>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col mr-4">
+                <p style="text-decoration:overline"><b>Envie uma Mensagem</b></p>
+                <form class="fa-border ">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputNome">Nome</label>
+                            <input type="text" class="form-control" id="inputNome" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail">Email</label>
+                            <input type="email" class="form-control" placeholder="example@example.com" id="inputEmail" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAssunto">Assunto</label>
+                        <input type="text" class="form-control" id="inputAssunto" placeholder="Opcional">
+                    </div>
+                    <div class="form-group" style="height:max-content">
+                        <textarea name="your-message" cols="40" rows="6" class="form-control" aria-invalid="false" placeholder="Mensagem"></textarea>
+                    </div>
+                 
+                    
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+        </div>
+    </div>
+</div>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <script>
-        /*Abrir e fechar Dropdown dos clientes*/
-        function openDropdown(id) {
-            let test = document.getElementById(id);
-            test.classList.toggle('d-none');
-        }
-        /*Função de pesquisa
-        function mySearch() {
-           
-            
-            var input, filter, divC, btC, p, i, txtValue, pa;
-            input = document.getElementById('searchClient');
-            filter = input.value.toUpperCase();
-            divC = document.getElementById("clientDiv");
-            btC = divC.getElementsByTagName('p');
-            alert("aqui");
-            alert(btC.length);
-            
-            for (i = 0; i < btC.length; i++) {
-                p = btC[i].getElementsByTagName("p")[0];
-                
-                txtValue = p.textContent || p.innerText;
-                alert(p.textContent, "and", p.innerText);
 
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    btC[i].style.display = "";
-                } else {
-                    li[i].style.display = "none";
-                }
-            }           
-        } */
     </script>
-
 </body>
 </html>
+
