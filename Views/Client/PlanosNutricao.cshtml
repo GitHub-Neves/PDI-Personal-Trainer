@@ -1,0 +1,420 @@
+﻿
+@{
+    ViewBag.Title = "PlanosNutricao";
+    Layout = "~/Views/Shared/_AreaPessoal.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nome da area</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a7c7c4a450.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <p class="h4">Informações</p>
+    <div class="container-fluid">
+        <!--Informações clínicas-->
+        <div class="row">
+            <div class="col-Question mt-2">
+                <button type="button" class="btn btn-success modalButton" data-toggle="modal" data-target="#modalClinic">
+                    <span class="font-weight-bold h6">Clínicas</span><span id="redDot-Clinic" class="redDot" style="margin-left:20px;"></span>
+                </button>
+
+                <div class="modal" id="modalClinic">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Informação Clínica</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="row questionSettings">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-2">
+                                        Altura (cm):
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                                        <input id="cmHeight" class="personHeight" type="number" value="" min="120" max="220">
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-2">
+                                        Sexo:
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                                        <select class="custom-select maleFemale mt-2">
+                                            <option selected></option>
+                                            <option value="masculino">Masculino</option>
+                                            <option value="feminino">Feminino</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        Diabetes:
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                                        <select class="custom-select yesNo mt-2">
+                                            <option selected></option>
+                                            <option value="sim">Sim</option>
+                                            <option value="nao">Não</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        Colesterol:
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                                        <select class="custom-select yesNo mt-2">
+                                            <option selected></option>
+                                            <option value="sim">Sim</option>
+                                            <option value="nao">Não</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        Problemas renais:
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                                        <select class="custom-select yesNo mt-2">
+                                            <option selected></option>
+                                            <option value="sim">Sim</option>
+                                            <option value="nao">Não</option>
+                                        </select>
+                                    </div>
+                                    <!--TRANSPLANTES-->
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        Transplantes:
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                                        <select id="tran" onchange="transplant(this.value)" class="custom-select yesNo mt-2">
+                                            <option selected></option>
+                                            <option value="sim">Sim</option>
+                                            <option value="nao">Não</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea id="textTransplant" rows="2" class="w-100 mt-2 optionalInformation d-none"></textarea>
+                                    </div>
+                                    <!--PROBLEMAS CARDIACOS-->
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        Problemas cardíacos:
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                                        <select id="car" onchange="cardiacProblems(this.value)" class="custom-select yesNo mt-2">
+                                            <option selected></option>
+                                            <option value="sim">Sim</option>
+                                            <option value="nao">Não</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea id="textCardiac" rows="2" class="w-100 mt-2 optionalInformation d-none"></textarea>
+                                    </div>
+                                    <!--PROBLEMAS ARTICULAÇOES-->
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        Problemas articulares/musculares:
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                                        <select id="probArt" onchange="problemsArt(this.value)" class="custom-select yesNo mt-2">
+                                            <option selected></option>
+                                            <option value="sim">Sim</option>
+                                            <option value="nao">Não</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea id="textProblems-Art" rows="2" class="w-100 mt-2 optionalInformation d-none"></textarea>
+                                    </div>
+                                    <!--OUTROS-->
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        Outros:
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea id="" rows="2" class="w-100 mt-2 optionalInformation" placeholder="Problemas que queira mencionar"></textarea>
+                                    </div>
+                                    <!--MEDICAÇÃO-->
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        Toma medicação regularmente?
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                                        <select id="med" onchange="medication(this.value)" class="custom-select yesNo mt-2">
+                                            <option selected></option>
+                                            <option value="sim">Sim</option>
+                                            <option value="nao">Não</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea id="textMedication" rows="2" class="w-100 mt-2 optionalInformation d-none" placeholder="Qual?"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-dismiss="modal">Atualizar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Informações Treino-->
+        <div class="row mt-2">
+            <div class="col-Question">
+                <button type="button" class="btn btn-success modalButton" data-toggle="modal" data-target="#modalTraining">
+                    <span class="font-weight-bold h6">Treino</span><span id="redDot-Training" class="redDot" style="margin-left:30px;"></span>
+                </button>
+
+                <div class="modal" id="modalTraining">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Informação de treino</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="row questionSettings">
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-2">
+                                        Nº de treinos semanais:
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                                        <input id="weeklyTraining" class="personHeight" type="number" value="" min="0">
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-2">
+                                        Local de treino:
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                                        <select class="custom-select maleFemale mt-2">
+                                            <option selected></option>
+                                            <option value="ginasio">Ginásio</option>
+                                            <option value="rua">Rua</option>
+                                            <option value="box">Box</option>
+                                            <option value="casa">Casa</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                        Objetivos:
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-dismiss="modal">Atualizar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Informações Refeições-->
+        <div class="row mt-2">
+            <div class="col-Question">
+                <button type="button" class="btn btn-success modalButton" data-toggle="modal" data-target="#modalMeals">
+                    <span class="font-weight-bold h6 ">Refeições</span><span id="redDot-Meals" class="redDot ml-2"></span>
+                </button>
+
+                <div class="modal" id="modalMeals">
+                    <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Descrição da alimentação</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="row questionSettings">
+                                    <div class="col-xl-2 col-lg-3 col-3">
+                                        Nº de Refeições diárias:
+                                    </div>
+                                    <div class="col-xl-8 col-lg-7 col-6">
+                                        <input id="mealsNumber" class="personHeight" type="number" value="" min="0">
+                                    </div>
+                                    <div class="col-xl-2 col-lg-2 col-3 text-right">
+                                        Local de Refeição
+                                    </div>
+
+                                    <div class="col-xl-2 col-lg-3 col-3 mt-2 align-self-center">
+                                        Ao acordar
+                                    </div>
+                                    <div class="col-xl-8 col-lg-7 col-6">
+                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição"></textarea>
+                                    </div>
+                                    <div class="col-xl-2 col-lg-2 col-3 align-self-center">
+                                        <textarea id="" rows="1" class="w-100 mt-2 optionalInformation "></textarea>
+                                    </div>
+
+                                    <div class="col-xl-2 col-lg-3 col-3 mt-2 align-self-center">
+                                        Pequeno-Almoço
+                                    </div>
+                                    <div class="col-xl-8 col-lg-7 col-6">
+                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição"></textarea>
+                                    </div>
+                                    <div class="col-xl-2 col-lg-2 col-3 align-self-center">
+                                        <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
+                                    </div>
+
+                                    <div class="col-xl-2 col-lg-3 col-3 mt-2 align-self-center">
+                                        Meio da Manhã
+                                    </div>
+                                    <div class="col-xl-8 col-lg-7 col-6">
+                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição"></textarea>
+                                    </div>
+                                    <div class="col-xl-2 col-lg-2 col-3 align-self-center">
+                                        <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
+                                    </div>
+
+                                    <div class="col-xl-2 col-lg-3 col-3 mt-2 align-self-center">
+                                        Almoço
+                                    </div>
+                                    <div class="col-xl-8 col-lg-7 col-6">
+                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição"></textarea>
+                                    </div>
+                                    <div class="col-xl-2 col-lg-2 col-3 align-self-center">
+                                        <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
+                                    </div>
+
+                                    <div class="col-xl-2 col-lg-3 col-3 mt-2 align-self-center">
+                                        Meio da Tarde
+                                    </div>
+                                    <div class="col-xl-8 col-lg-7 col-6">
+                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição"></textarea>
+                                    </div>
+                                    <div class="col-xl-2 col-lg-2 col-3 align-self-center">
+                                        <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
+                                    </div>
+
+                                    <div class="col-xl-2 col-lg-3 col-3 mt-2 align-self-center">
+                                        Jantar
+                                    </div>
+                                    <div class="col-xl-8 col-lg-7 col-6">
+                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição"></textarea>
+                                    </div>
+                                    <div class="col-xl-2 col-lg-2 col-3 align-self-center">
+                                        <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
+                                    </div>
+
+                                    <div class="col-xl-2 col-lg-3 col-3 mt-2 align-self-center">
+                                        Ceia
+                                    </div>
+                                    <div class="col-xl-8 col-lg-7 col-6">
+                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição"></textarea>
+                                    </div>
+                                    <div class="col-xl-2 col-lg-2 col-3 align-self-center">
+                                        <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
+                                    </div>
+
+                                    <div class="col-xl-2 col-lg-3 col-3 mt-2 align-self-center">
+                                        Alergias /Intolerâncias Alimentares
+                                    </div>
+                                    <div class="col-xl-8 col-lg-7 col-6">
+                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Alimentos que não consiga possa"></textarea>
+                                    </div>
+                                    <div class="col-xl-2 col-lg-2 col-3 align-self-center">
+                                        <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
+                                    </div>
+
+                                    <div class="col-xl-2 col-3 mt-2 align-self-center">
+                                        Mais Informações
+                                    </div>
+                                    <div class="col-xl-10 col-9">
+                                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Informação necessária que não foi possível escrever nas áreas anteriores"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success" data-dismiss="modal">Atualizar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Legenda-->
+        <div class="mt-3">
+            <p class="align-self-center" style="font-size:12px; color:red;"><span class="redDot-Label"></span>Questionário por responder</p>
+        </div>
+    </div>
+    <p class="h4 mt-5 mb-2">Planos de Nutrição</p>
+    
+    <div class="row">
+        @{ int i = 1;
+            while (i < 18)
+            {
+
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 text-center mt-2">
+                    <i class="fas fa-file-signature mt-2" style="font-size:100px;"></i>
+                    <p>05/06/2021</p>
+                    <button type="button" class="btn btn-success modalButton" data-toggle="" data-target="">
+                        <p class="font-weight-bold h6 downloadButton">Download</p>
+                    </button>
+                </div>
+
+                i++;
+            }
+        }
+    </div>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script>
+        /*Sublinhar a categoria selecionada*/
+        let select = document.getElementById('navNutrition');
+        window.onload = function SelectNav() {
+            select.classList.add('navPersonal');
+        }
+        /*Fazer aparecer e desaparecer as text areas*/
+        /*Medicação*/
+        function medication(val) {
+            let med = document.getElementById('textMedication');
+            if (val == "sim") {
+                med.classList.remove('d-none');
+            }
+            else {
+                med.classList.add('d-none');
+            }
+        }
+        /*Problemas articulares*/
+        function problemsArt(val) {
+            let prob = document.getElementById('textProblems-Art');
+            if (val == "sim") {
+                prob.classList.remove('d-none');
+            }
+            else {
+                let prob = document.getElementById('textProblems-Art');
+                prob.classList.add('d-none');
+            }
+        }
+        /*Problemas cardiacos*/
+        function cardiacProblems(val) {
+            let car = document.getElementById('textCardiac');
+            if (val == "sim") {
+                car.classList.remove('d-none');
+            }
+            else {
+                car.classList.add('d-none');
+            }
+        }
+        /*Transplantes*/
+        function transplant(val) {
+            let tran = document.getElementById('textTransplant');
+            if (val == "sim") {
+                tran.classList.remove('d-none');
+            }
+            else {
+                tran.classList.add('d-none');
+            }
+        }
+
+    </script>
+</body>
+</html>
+
