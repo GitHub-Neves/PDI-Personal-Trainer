@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="pdiModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="8.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="mensagens">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="userId" Type="int" />
+          <Property Name="texto" Type="varchar" MaxLength="45" />
+          <Property Name="userVisto" Type="varchar" MaxLength="45" />
+          <Property Name="trainerVisto" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="perfil">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="email" Type="varchar" MaxLength="200" />
+          <Property Name="password" Type="varchar" MaxLength="45" />
+          <Property Name="dataInscricao" Type="date" />
+          <Property Name="nomeCompleto" Type="varchar" MaxLength="200" />
+          <Property Name="nomePerfil" Type="varchar" MaxLength="45" />
+          <Property Name="contacto" Type="int" />
+          <Property Name="dataNascimento" Type="date" />
+          <Property Name="NIF" Type="int" />
+          <Property Name="rua" Type="varchar" MaxLength="200" />
+          <Property Name="localidade" Type="varchar" MaxLength="45" />
+          <Property Name="cidade" Type="varchar" MaxLength="45" />
+          <Property Name="codigoPostal" Type="varchar" MaxLength="45" />
+          <Property Name="foto" Type="varchar" MaxLength="200" />
+          <Property Name="respondido" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="treinos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="userId" Type="int" />
+          <Property Name="link" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="user_alimentacao">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="userId" Type="int" />
+          <Property Name="refeicoesDiarias" Type="int" />
+          <Property Name="acordar" Type="varchar" MaxLength="500" />
+          <Property Name="localAcordar" Type="varchar" MaxLength="45" />
+          <Property Name="pequeno" Type="varchar" MaxLength="500" />
+          <Property Name="localPequeno" Type="varchar" MaxLength="45" />
+          <Property Name="manha" Type="varchar" MaxLength="500" />
+          <Property Name="localManha" Type="varchar" MaxLength="45" />
+          <Property Name="almoco" Type="varchar" MaxLength="500" />
+          <Property Name="localAlmoco" Type="varchar" MaxLength="45" />
+          <Property Name="tarde" Type="varchar" MaxLength="500" />
+          <Property Name="localTarde" Type="varchar" MaxLength="45" />
+          <Property Name="jantar" Type="varchar" MaxLength="500" />
+          <Property Name="localJantar" Type="varchar" MaxLength="45" />
+          <Property Name="ceia" Type="varchar" MaxLength="500" />
+          <Property Name="localCeia" Type="varchar" MaxLength="45" />
+          <Property Name="alergias" Type="varchar" MaxLength="500" />
+          <Property Name="info" Type="varchar" MaxLength="500" />
+          <Property Name="respondido" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="user_clinica">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="userId" Type="int" />
+          <Property Name="altura" Type="int" />
+          <Property Name="sexo" Type="varchar" MaxLength="45" />
+          <Property Name="diabetes" Type="varchar" MaxLength="45" />
+          <Property Name="colesterol" Type="varchar" MaxLength="45" />
+          <Property Name="renais" Type="varchar" MaxLength="45" />
+          <Property Name="transplantes" Type="varchar" MaxLength="45" />
+          <Property Name="textoTransplantes" Type="varchar" MaxLength="500" />
+          <Property Name="cardiacos" Type="varchar" MaxLength="45" />
+          <Property Name="textoCardiacos" Type="varchar" MaxLength="500" />
+          <Property Name="articulares" Type="varchar" MaxLength="45" />
+          <Property Name="textoArticulares" Type="varchar" MaxLength="500" />
+          <Property Name="outros" Type="varchar" MaxLength="500" />
+          <Property Name="medicacao" Type="varchar" MaxLength="45" />
+          <Property Name="textoMedicacao" Type="varchar" MaxLength="500" />
+          <Property Name="respondido" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="user_fotos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="userId" Type="int" />
+          <Property Name="data" Type="date" />
+          <Property Name="frontal" Type="varchar" MaxLength="200" />
+          <Property Name="lateral" Type="varchar" MaxLength="200" />
+          <Property Name="traseira" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="user_medicoes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="userId" Type="int" />
+          <Property Name="braco" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="abdominal" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="peitoral" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="coxa" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="gemeo" Type="decimal" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="user_peso">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="userId" Type="int" />
+          <Property Name="data" Type="date" />
+          <Property Name="peso" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="mGorda" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="mMagra" Type="decimal" Precision="10" Scale="0" />
+        </EntityType>
+        <EntityType Name="user_plano">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="userId" Type="int" />
+          <Property Name="planoNutricao" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="user_treino">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="userId" Type="int" />
+          <Property Name="treinosSemanais" Type="int" />
+          <Property Name="local" Type="varchar" MaxLength="45" />
+          <Property Name="objetivos" Type="varchar" MaxLength="45" />
+          <Property Name="respondido" Type="varchar" MaxLength="45" />
+        </EntityType>
+        <EntityContainer Name="pdiModelStoreContainer">
+          <EntitySet Name="mensagens" EntityType="Self.mensagens" Schema="pdi" store:Type="Tables" />
+          <EntitySet Name="perfil" EntityType="Self.perfil" Schema="pdi" store:Type="Tables" />
+          <EntitySet Name="treinos" EntityType="Self.treinos" Schema="pdi" store:Type="Tables" />
+          <EntitySet Name="user_alimentacao" EntityType="Self.user_alimentacao" Schema="pdi" store:Type="Tables" />
+          <EntitySet Name="user_clinica" EntityType="Self.user_clinica" Schema="pdi" store:Type="Tables" />
+          <EntitySet Name="user_fotos" EntityType="Self.user_fotos" Schema="pdi" store:Type="Tables" />
+          <EntitySet Name="user_medicoes" EntityType="Self.user_medicoes" Schema="pdi" store:Type="Tables" />
+          <EntitySet Name="user_peso" EntityType="Self.user_peso" Schema="pdi" store:Type="Tables" />
+          <EntitySet Name="user_plano" EntityType="Self.user_plano" Schema="pdi" store:Type="Tables" />
+          <EntitySet Name="user_treino" EntityType="Self.user_treino" Schema="pdi" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="pdiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="mensagens">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="userId" Type="Int32" />
+          <Property Name="texto" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="userVisto" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="trainerVisto" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="perfil">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="dataInscricao" Type="DateTime" />
+          <Property Name="nomeCompleto" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="nomePerfil" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="contacto" Type="Int32" />
+          <Property Name="dataNascimento" Type="DateTime" />
+          <Property Name="NIF" Type="Int32" />
+          <Property Name="rua" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="localidade" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="cidade" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="codigoPostal" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="foto" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="respondido" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="treinos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="userId" Type="Int32" />
+          <Property Name="link" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="user_alimentacao">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="userId" Type="Int32" />
+          <Property Name="refeicoesDiarias" Type="Int32" />
+          <Property Name="acordar" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="localAcordar" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="pequeno" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="localPequeno" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="manha" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="localManha" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="almoco" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="localAlmoco" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="tarde" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="localTarde" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="jantar" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="localJantar" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="ceia" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="localCeia" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="alergias" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="info" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="respondido" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="user_clinica">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="userId" Type="Int32" />
+          <Property Name="altura" Type="Int32" />
+          <Property Name="sexo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="diabetes" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="colesterol" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="renais" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="transplantes" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="textoTransplantes" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="cardiacos" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="textoCardiacos" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="articulares" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="textoArticulares" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="outros" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="medicacao" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="textoMedicacao" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="respondido" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="user_fotos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="userId" Type="Int32" />
+          <Property Name="data" Type="DateTime" />
+          <Property Name="frontal" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="lateral" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="traseira" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="user_medicoes">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="userId" Type="Int32" />
+          <Property Name="braco" Type="Decimal" />
+          <Property Name="abdominal" Type="Decimal" />
+          <Property Name="peitoral" Type="Decimal" />
+          <Property Name="coxa" Type="Decimal" />
+          <Property Name="gemeo" Type="Decimal" />
+        </EntityType>
+        <EntityType Name="user_peso">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="userId" Type="Int32" />
+          <Property Name="data" Type="DateTime" />
+          <Property Name="peso" Type="Decimal" />
+          <Property Name="mGorda" Type="Decimal" />
+          <Property Name="mMagra" Type="Decimal" />
+        </EntityType>
+        <EntityType Name="user_plano">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="userId" Type="Int32" />
+          <Property Name="planoNutricao" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="user_treino">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="userId" Type="Int32" />
+          <Property Name="treinosSemanais" Type="Int32" />
+          <Property Name="local" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="objetivos" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="respondido" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DatabasePDI" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="mensagens" EntityType="Self.mensagens" />
+          <EntitySet Name="perfil" EntityType="Self.perfil" />
+          <EntitySet Name="treinos" EntityType="Self.treinos" />
+          <EntitySet Name="user_alimentacao" EntityType="Self.user_alimentacao" />
+          <EntitySet Name="user_clinica" EntityType="Self.user_clinica" />
+          <EntitySet Name="user_fotos" EntityType="Self.user_fotos" />
+          <EntitySet Name="user_medicoes" EntityType="Self.user_medicoes" />
+          <EntitySet Name="user_peso" EntityType="Self.user_peso" />
+          <EntitySet Name="user_plano" EntityType="Self.user_plano" />
+          <EntitySet Name="user_treino" EntityType="Self.user_treino" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="pdiModelStoreContainer" CdmEntityContainer="DatabasePDI">
+          <EntitySetMapping Name="mensagens">
+            <EntityTypeMapping TypeName="pdiModel.mensagens">
+              <MappingFragment StoreEntitySet="mensagens">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="texto" ColumnName="texto" />
+                <ScalarProperty Name="userVisto" ColumnName="userVisto" />
+                <ScalarProperty Name="trainerVisto" ColumnName="trainerVisto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="perfil">
+            <EntityTypeMapping TypeName="pdiModel.perfil">
+              <MappingFragment StoreEntitySet="perfil">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="dataInscricao" ColumnName="dataInscricao" />
+                <ScalarProperty Name="nomeCompleto" ColumnName="nomeCompleto" />
+                <ScalarProperty Name="nomePerfil" ColumnName="nomePerfil" />
+                <ScalarProperty Name="contacto" ColumnName="contacto" />
+                <ScalarProperty Name="dataNascimento" ColumnName="dataNascimento" />
+                <ScalarProperty Name="NIF" ColumnName="NIF" />
+                <ScalarProperty Name="rua" ColumnName="rua" />
+                <ScalarProperty Name="localidade" ColumnName="localidade" />
+                <ScalarProperty Name="cidade" ColumnName="cidade" />
+                <ScalarProperty Name="codigoPostal" ColumnName="codigoPostal" />
+                <ScalarProperty Name="foto" ColumnName="foto" />
+                <ScalarProperty Name="respondido" ColumnName="respondido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="treinos">
+            <EntityTypeMapping TypeName="pdiModel.treinos">
+              <MappingFragment StoreEntitySet="treinos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="link" ColumnName="link" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_alimentacao">
+            <EntityTypeMapping TypeName="pdiModel.user_alimentacao">
+              <MappingFragment StoreEntitySet="user_alimentacao">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="refeicoesDiarias" ColumnName="refeicoesDiarias" />
+                <ScalarProperty Name="acordar" ColumnName="acordar" />
+                <ScalarProperty Name="localAcordar" ColumnName="localAcordar" />
+                <ScalarProperty Name="pequeno" ColumnName="pequeno" />
+                <ScalarProperty Name="localPequeno" ColumnName="localPequeno" />
+                <ScalarProperty Name="manha" ColumnName="manha" />
+                <ScalarProperty Name="localManha" ColumnName="localManha" />
+                <ScalarProperty Name="almoco" ColumnName="almoco" />
+                <ScalarProperty Name="localAlmoco" ColumnName="localAlmoco" />
+                <ScalarProperty Name="tarde" ColumnName="tarde" />
+                <ScalarProperty Name="localTarde" ColumnName="localTarde" />
+                <ScalarProperty Name="jantar" ColumnName="jantar" />
+                <ScalarProperty Name="localJantar" ColumnName="localJantar" />
+                <ScalarProperty Name="ceia" ColumnName="ceia" />
+                <ScalarProperty Name="localCeia" ColumnName="localCeia" />
+                <ScalarProperty Name="alergias" ColumnName="alergias" />
+                <ScalarProperty Name="info" ColumnName="info" />
+                <ScalarProperty Name="respondido" ColumnName="respondido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_clinica">
+            <EntityTypeMapping TypeName="pdiModel.user_clinica">
+              <MappingFragment StoreEntitySet="user_clinica">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="altura" ColumnName="altura" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="diabetes" ColumnName="diabetes" />
+                <ScalarProperty Name="colesterol" ColumnName="colesterol" />
+                <ScalarProperty Name="renais" ColumnName="renais" />
+                <ScalarProperty Name="transplantes" ColumnName="transplantes" />
+                <ScalarProperty Name="textoTransplantes" ColumnName="textoTransplantes" />
+                <ScalarProperty Name="cardiacos" ColumnName="cardiacos" />
+                <ScalarProperty Name="textoCardiacos" ColumnName="textoCardiacos" />
+                <ScalarProperty Name="articulares" ColumnName="articulares" />
+                <ScalarProperty Name="textoArticulares" ColumnName="textoArticulares" />
+                <ScalarProperty Name="outros" ColumnName="outros" />
+                <ScalarProperty Name="medicacao" ColumnName="medicacao" />
+                <ScalarProperty Name="textoMedicacao" ColumnName="textoMedicacao" />
+                <ScalarProperty Name="respondido" ColumnName="respondido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_fotos">
+            <EntityTypeMapping TypeName="pdiModel.user_fotos">
+              <MappingFragment StoreEntitySet="user_fotos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="frontal" ColumnName="frontal" />
+                <ScalarProperty Name="lateral" ColumnName="lateral" />
+                <ScalarProperty Name="traseira" ColumnName="traseira" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_medicoes">
+            <EntityTypeMapping TypeName="pdiModel.user_medicoes">
+              <MappingFragment StoreEntitySet="user_medicoes">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="braco" ColumnName="braco" />
+                <ScalarProperty Name="abdominal" ColumnName="abdominal" />
+                <ScalarProperty Name="peitoral" ColumnName="peitoral" />
+                <ScalarProperty Name="coxa" ColumnName="coxa" />
+                <ScalarProperty Name="gemeo" ColumnName="gemeo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_peso">
+            <EntityTypeMapping TypeName="pdiModel.user_peso">
+              <MappingFragment StoreEntitySet="user_peso">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="peso" ColumnName="peso" />
+                <ScalarProperty Name="mGorda" ColumnName="mGorda" />
+                <ScalarProperty Name="mMagra" ColumnName="mMagra" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_plano">
+            <EntityTypeMapping TypeName="pdiModel.user_plano">
+              <MappingFragment StoreEntitySet="user_plano">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="planoNutricao" ColumnName="planoNutricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_treino">
+            <EntityTypeMapping TypeName="pdiModel.user_treino">
+              <MappingFragment StoreEntitySet="user_treino">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="treinosSemanais" ColumnName="treinosSemanais" />
+                <ScalarProperty Name="local" ColumnName="local" />
+                <ScalarProperty Name="objetivos" ColumnName="objetivos" />
+                <ScalarProperty Name="respondido" ColumnName="respondido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
