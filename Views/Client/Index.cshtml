@@ -1,0 +1,212 @@
+@model NS_Fitness_Website.Models.perfil
+
+@{
+    ViewBag.Title = "Perfil";
+    Layout = "~/Views/Shared/_AreaPessoal.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perfil</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/a7c7c4a450.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div>
+        <div class="container-fluid">
+            <div class="row ">
+                <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="accountSettings">
+                                <div class="userProfile">
+                                    <div class="userAvatar">
+                                        <img src="@Html.DisplayFor(model => model.foto)" alt="Utilizador">
+                                    </div>
+                                    <div id="uploadPhoto" class="d-none" style="border:1px solid #DCDCDC;border-radius:5px;">
+                                        <input id="inputPhoto" class="w-100" type="file" name="photo" value="" style=""/>
+                                        <button id="submitPhoto" class="mt-2" onclick="submitPhoto();">Mudar</button>
+                                    </div>
+                                    <div>
+                                        <button id="changePhoto" class="mt-1" onclick="showButtons();">Alterar foto<i class="ml-2 fas fa-upload"></i></button>
+                                    </div>                           
+                                </div>
+                                <h5 class="userName text-center">@Html.DisplayFor(model => model.nomePerfil)</h5>
+                                <div class="date mt-5">
+                                    <h5 class="mb-2 text-primary">Data de inscrição</h5>
+                                    <p>@Html.DisplayFor(model => model.dataInscricao)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <div class="row ">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h6 class="mb-3 text-primary">Dados Pessoais</h6>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="fullName">Nome</label>
+                                        <input type="text" class="form-control" id="fullName" placeholder="@Html.DisplayFor(model => model.nomeCompleto)" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="@Html.DisplayFor(model => model.email)" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="contact">Contacto</label>
+                                        <input type="text" class="form-control" id="contact" placeholder="@Html.DisplayFor(model => model.contacto)" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="age">Data de Nascimento</label>
+                                        <input type="date" class="form-control" id="birthDate" placeholder="@Html.DisplayFor(model => model.dataNascimento)" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="NIF">NIF</label>
+                                        <input type="url" class="form-control" id="NIF" placeholder="@Html.DisplayFor(model => model.NIF)" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h6 class="mb-3 text-primary">Morada</h6>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="Street">Rua</label>
+                                        <input type="text" class="form-control" id="street" placeholder="@Html.DisplayFor(model => model.rua)" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="locality">Localidade</label>
+                                        <input type="text" class="form-control" id="locality" placeholder="@Html.DisplayFor(model => model.localidade)" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="city">Cidade</label>
+                                        <input type="text" class="form-control" id="city" placeholder="@Html.DisplayFor(model => model.cidade)" readonly>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label for="postalCode">Código Postal</label>
+                                        <input type="text" class="form-control" id="postalCode" placeholder="@Html.DisplayFor(model => model.codigoPostal)" readonly>
+                                    </div>
+                                </div>                             
+                            </div>
+                            <div class="row ">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="text-right">
+                                        <button type="reset" id="reset" name="submit" class="btn btn-secondary d-none" onclick="resetInputs();">Cancel</button>
+                                        <button type="submit" id="confirm" name="submit" class="btn btn-success d-none" onclick="submitProfile();">Confirmar</button>
+                                        <button type="submit" id="edit" name="submit" class="btn btn-primary" onclick="editProfile();">Editar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script>
+        /*Sublinhar a categoria selecionada*/
+        let select = document.getElementById('navProfile');
+        window.onload = function SelectNav() {
+            select.classList.add('navPersonal');
+        }
+        /*Funçoes para o upload de uma nova foto */
+        let input = document.getElementById('uploadPhoto');
+        let change = document.getElementById('changePhoto');
+        function showButtons() {
+            input.classList.toggle('d-none');
+            change.classList.toggle('d-none');
+        }
+        function submitPhoto() {
+            change.classList.toggle('d-none');
+            input.classList.toggle('d-none');
+        }
+        /*Funções de readonly*/
+        let confirm = document.getElementById('confirm');
+        let reset = document.getElementById('reset');
+        let edit = document.getElementById('edit');
+
+        let postalCode = document.getElementById('postalCode');
+        let city = document.getElementById('city');
+        let locality = document.getElementById('locality');
+        let street = document.getElementById('street');
+        let NIF = document.getElementById('NIF');
+        let birthDate = document.getElementById('birthDate');
+        let contact = document.getElementById('contact');
+        let email = document.getElementById('email');
+        let fullName = document.getElementById('fullName');
+        function editProfile() {
+            confirm.classList.toggle('d-none');
+            reset.classList.toggle('d-none');
+            edit.classList.toggle('d-none');
+
+            postalCode.readOnly = false;
+            city.readOnly = false;
+            locality.readOnly = false;
+            street.readOnly = false;
+            NIF.readOnly = false;
+            birthDate.readOnly = false;
+            contact.readOnly = false;
+            email.readOnly = false;
+            fullName.readOnly = false;
+        }
+        function submitProfile() {
+            confirm.classList.toggle('d-none');
+            reset.classList.toggle('d-none');
+            edit.classList.toggle('d-none');
+            /*espaço para submeter os dados
+             
+             */
+            postalCode.readOnly = true;
+            city.readOnly = true;
+            locality.readOnly = true;
+            street.readOnly = true;
+            NIF.readOnly = true;
+            birthDate.readOnly = true;
+            contact.readOnly = true;
+            email.readOnly = true;
+            fullName.readOnly = true;
+        }
+        function resetInputs() {
+            var elements = document.getElementsByTagName("input");
+            for (var i = 0; i < elements.length; i++) {
+                    elements[i].value = "";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
