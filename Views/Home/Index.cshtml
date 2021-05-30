@@ -4,98 +4,151 @@
 }
 
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nome da area</title>
-    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css">
+    <link href="@Url.Content("/Content/Site.css")" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/a7c7c4a450.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="container pt-2 mt-4">
-        <div class="row-cols-2 conteudo border border-info pt-2">
-            <div class="col">
-                Nuno Silvano é um ex-ginasta de alta competição com múltiplas participações em competições europeias e mundiais, licenciado em Ciências do Desporto e Educação Física pela universidade de Coimbra. <br />
-                Com 24 e proveniente de Coimbra, Nuno t
-                - 24 anos <br>
-                - Coimbra <br>
-                - Ex-ginasta de alta competição com múltiplas participações em competições europeias e mundiais
-                - Licenciado em Ciências do Desporto e Educação Física pela universidade de Coimbra
-            </div>
-            <div class="col">
-                <img src="~/Content/images/coxa.png" alt="Alternate Text" />
-            </div>
-        </div>
-    </div>
-    <hr class="w-100" />
-    <div class="container pt-2 mt-4">
-        <div class="row-cols-1 conteudo border border-info pt-2">
-            <div class="col">
-                - Nuno Silvano <br>
-                - 24 anos <br>
-                - Coimbra <br>
-                - Ex-ginasta de alta competição com múltiplas participações em competições europeias e mundiais <br>
-                - Licenciado em Ciências do Desporto e educação Física pela universidade de Coimbra
+<body style="background-image:url(../../Content/images/ginasio1.jpg)">
+    <container >
+        <div class="container pt-2 mt-4">
+            <div class="row conteudo pt-2">
+                <div class="col text-wrap">
+                    <div class="">
+                        <ul>
+                            <li class="fundo"><span style="font-size:18px;"><span style="font-family:Georgia,serif;">Nuno Silvano &eacute; um ex-ginasta de alta competi&ccedil;&atilde;o com m&uacute;ltiplas participa&ccedil;&otilde;es em competi&ccedil;&otilde;es europeias e mundiais</span></span></li>
+                            <li class="fundo"><span style="font-size:18px;"><span style="font-family:Georgia,serif;">Licenciado em Ci&ecirc;ncias do Desporto e Educa&ccedil;&atilde;o F&iacute;sica pela universidade de Coimbra</span></span></li>
+                            <li class="fundo"><span style="font-size:18px;"><span style="font-family:Georgia,serif;">Com 24 e proveniente de Coimbra, Nuno &eacute; experiente em treinos personalizados</span></span></li>
+                            <li class="fundo"><span style="font-size:18px;"><span style="font-family:Georgia,serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</span></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col flex-wrap d-block">
+                    <img class="imagem-formatada" src="/Content/images/nunoSilvano.jpg" alt="Alternate Text" height="400" />
+                </div>
             </div>
         </div>
-    </div>
+        <hr class="w-100" />
+        <div class="container pt-2 mt-4">
+            <div class="row conteudo  pt-2">
+                <div class="col flex-wrap d-block">
+                    <img class="imagem-formatada" src="/Content/images/nunoSilvano2.jpg" alt="Alternate Text" height="400" />
+                </div>
+                <div class="col justify-content-around">
+                    <div>
+                        <ul>
+                            <li class="fundo"><span style="font-size:18px;"><span style="font-family:Georgia,serif;">Nuno Silvano &eacute; um ex-ginasta de alta competi&ccedil;&atilde;o com m&uacute;ltiplas participa&ccedil;&otilde;es em competi&ccedil;&otilde;es europeias e mundiais</span></span></li>
+                            <li class="fundo"><span style="font-size:18px;"><span style="font-family:Georgia,serif;">Licenciado em Ci&ecirc;ncias do Desporto e Educa&ccedil;&atilde;o F&iacute;sica pela universidade de Coimbra</span></span></li>
+                            <li class="fundo"><span style="font-size:18px;"><span style="font-family:Georgia,serif;">Com 24 e proveniente de Coimbra, Nuno &eacute; experiente em treinos personalizados</span></span></li>
+                            <li class="fundo"><span style="font-size:18px;"><span style="font-family:Georgia,serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</span></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </container>
     <hr class="w-100" style="color:black" />
     <div class="w-100 pt-2 mt-4">
         <div class="row pt-2">
-            <div class="col">
-                <div class="w-100 justify-content-center"><p style="text-decoration:overline"><b>MAPA</b></p></div>
+            <div class="col" style="bottom:20px;margin-left:2%;">
+                <div class="w-100 justify-content-center">
+                    <p style="text-decoration:overline">
+                        <b class="text-white" style="padding-top:1%">MAPA</b>
+                    </p>
+                </div>
                 <div class="d-flex pl-1">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1862.9686363305425!2d-8.434574!3d40.1998984!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-PT!2spt!4v1621529937342!5m2!1spt-PT!2spt" width="480" height="360" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d1243.9663823973794!2d-8.435006441411218!3d40.19971857261475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e0!4m0!4m3!3m2!1d40.1994883!2d-8.4348714!5e1!3m2!1spt-PT!2spt!4v1622411883309!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
             <div class="col">
-                <p style="text-decoration:overline"><b>CONTACTOS</b></p>
-                <div class="text-wrap">
-                    <div>silvanoworks@gmail.com<br></div>
-                    <div><i class="fas fa-phone"></i> <strong><span style="font-size:18px">916 932 765</span></strong></div>
+                <p class="" style="text-decoration:overline"><b class="text-white" style="padding-top:1%">CONTACTOS</b></p>
+                <div class="text-wrap subfundo">
+                    <br />
                     <div>
-                        <i class="fab fa-instagram img-thumbnail"></i>
-                        <strong><a href="https://www.instagram.com/nuno_silvano/"><span style="font-family:Verdana,Geneva,sans-serif"><span style="font-size:16px"><strong>Instagram</strong></span></span></a></strong>
+                        <i class="fa fa-envelope fa-2x text-white"><span style="font-size:18px"><a href="mailto:silvanoworks@gmail.com">  silvanoworks@gmail.com </a></span></i> <br>
                     </div>
-
+                    <br />
+                    <div class="d-flex">
+                        <i class="fas fa-phone fa-2x text-white">
+                            <strong>
+                                <span style="font-size:18px">916 932 765</span>
+                            </strong>
+                        </i>
+                    </div>
+                    <br/>
+                    <div>
+                        <i class="fab fa-instagram fa-2x img-thumbnail">
+                            <strong>
+                                <a href="https://www.instagram.com/nuno_silvano/">
+                                    <span style="font-family:Verdana,Geneva,sans-serif">
+                                        <span style="font-size:16px">
+                                            <strong>Instagram</strong>
+                                        </span>
+                                    </span>
+                                </a>
+                            </strong>
+                        </i>
+                    </div>
                 </div>
             </div>
-            <div class="col mr-4">
-                <p style="text-decoration:overline"><b>Envie uma Mensagem</b></p>
-                <form class="fa-border ">
+            <div class="col mr-2">
+                <p style="text-decoration:overline"><b style="padding-top:1%" class="text-white">Envie uma Mensagem</b></p>
+                <form class="form-msg w-auto">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="inputNome">Nome</label>
+                            <label for="inputNome" class="labelIndex">Nome</label>
                             <input type="text" class="form-control" id="inputNome" required>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputEmail">Email</label>
+                            <label for="inputEmail" class="labelIndex">Email</label>
                             <input type="email" class="form-control" placeholder="example@example.com" id="inputEmail" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="inputAssunto">Assunto</label>
+                        <label for="inputAssunto" class="labelIndex">Assunto</label>
                         <input type="text" class="form-control" id="inputAssunto" placeholder="Opcional">
                     </div>
                     <div class="form-group" style="height:max-content">
                         <textarea name="your-message" cols="40" rows="6" class="form-control" aria-invalid="false" placeholder="Mensagem"></textarea>
                     </div>
-
-
                     <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
             </div>
         </div>
     </div>
+    @*<div class="container">
+        <div class="row justify-content-md-start">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        Welcome
+                    </div>
+                    <div class="card-body">
+                        @if (Session["nomeCompleto"] != null)
+                        {
+                            <p>Name: @Session["nomeCompleto"].ToString()</p>
+                            <p>Email: @Session["email"].ToString()</p>
+                            <a href="@Url.Action("Logout","Home")" class="btn btn-warning">Logout</a>
+                        }
+                    </div>
+               </div>
+        </div>
+    </div>
+    </div>*@
+    
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <script>
+
     </script>
 </body>
 </html>
+
