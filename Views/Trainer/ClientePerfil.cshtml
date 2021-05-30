@@ -1,4 +1,5 @@
-﻿
+﻿@model NS_Fitness_Website.Models.perfil
+
 @{
     ViewBag.Title = "ClientePerfil";
     Layout = "~/Views/Shared/_TrainerNavbar.cshtml";
@@ -20,8 +21,6 @@
     <h2 class="ml-3 mb-5">Informações de Cliente</h2>
 
     @{
-        string nome = "Carlos Santos";
-
         <div>
             <div class="container-fluid">
                 <div class="row ">
@@ -31,13 +30,13 @@
                                 <div class="accountSettings">
                                     <div class="userProfile">
                                         <div class="userAvatar">
-                                            <img src="~/Content/images/user.png" alt="Utilizador">
+                                            <img src="@Html.DisplayFor(model => model.foto)" alt="Utilizador">
                                         </div>
                                     </div>
-                                    <h5 class="userName text-center">@nome</h5>
+                                    <h5 class="userName text-center">@Html.DisplayFor(model => model.nomePerfil)</h5>
                                     <div class="date mt-5">
                                         <h5 class="mb-2 text-primary">Data de inscrição</h5>
-                                        <p>20/04/2019</p>
+                                        <p>@Html.DisplayFor(model => model.dataInscricao)</p>
                                     </div>
                                 </div>
                             </div>
@@ -53,31 +52,31 @@
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div class="form-group">
                                             <label for="fullName" class="font-weight-bold">Nome</label>
-                                            <p>Carlos André Moreira Ferro da Silva</p>
+                                            <p>@Html.DisplayFor(model => model.nomeCompleto)</p>
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div class="form-group">
                                             <label for="email" class="font-weight-bold">Email</label>
-                                            <p>carlosferro45@hotmail.com</p>
+                                            <p>@Html.DisplayFor(model => model.email)</p>
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div class="form-group">
                                             <label for="contact" class="font-weight-bold">Contacto</label>
-                                            <p>914 586 789</p>
+                                            <p>@Html.DisplayFor(model => model.contacto)</p>
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div class="form-group">
                                             <label for="age" class="font-weight-bold">Data de Nascimento</label>
-                                            <p>08/10/1986</p>
+                                            <p>@Html.DisplayFor(model => model.dataNascimento)</p>
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div class="form-group">
                                             <label for="NIF" class="font-weight-bold">NIF</label>
-                                            <p>215 366 414</p>
+                                            <p>@Html.DisplayFor(model => model.NIF)</p>
                                         </div>
                                     </div>
                                 </div>
@@ -88,25 +87,25 @@
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div class="form-group">
                                             <label for="Street" class="font-weight-bold">Rua</label>
-                                            <p>Rua do Santo Tordo, nº11, lote 2</p>
+                                            <p>@Html.DisplayFor(model => model.rua)</p>
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div class="form-group">
                                             <label for="locality" class="font-weight-bold">Localidade</label>
-                                            <p>Condeixa</p>
+                                            <p>@Html.DisplayFor(model => model.localidade)</p>
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div class="form-group">
                                             <label for="city" class="font-weight-bold">Cidade</label>
-                                            <p>Coimbra</p>
+                                            <p>@Html.DisplayFor(model => model.cidade)</p>
                                         </div>
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                         <div class="form-group">
                                             <label for="postalCode" class="font-weight-bold">Código Postal</label>
-                                            <p>3040-598</p>
+                                            <p>@Html.DisplayFor(model => model.codigoPostal)</p>
                                         </div>
                                     </div>
                                 </div>

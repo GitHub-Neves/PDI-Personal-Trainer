@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<NS_Fitness_Website.Models.user_clinica>
+
 @{
     ViewBag.Title = "ClienteNutricao";
     Layout = "~/Views/Shared/_TrainerNavbar.cshtml";
@@ -23,92 +24,102 @@
     
 
     <div class="pl-4 pr-4">
-        
         <div class="row">
             <!--INFO CLÍNICA-->
-            <div class="col-12 col-md-6 col-lg-6 col-xl-3 mt-5 border-left border-right">
-                <p class="text-center font-weight-bold h4">Informação clínica</p>
-                <div class="row questionSettings">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 font-weight-bold mt-2">
-                        Altura (cm):
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
-                        <p>176</p>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 font-weight-bold mt-2">
-                        Sexo:
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
-                        <p>Masculino</p>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 font-weight-bold col-12">
-                        Diabetes:
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
-                        <p>Não</p>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 font-weight-bold">
-                        Colesterol:
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
-                        <p>Não</p>
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 font-weight-bold">
-                        Problemas renais:
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
-                        <p>Não</p>
-                    </div>
-                    <!--TRANSPLANTES-->
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 font-weight-bold">
-                        Transplantes:
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
-                        <p>Não</p>
-                    </div>
-                    <div class="col-12">
-                        <textarea id="textTransplant" rows="2" class="w-100 mt-2 optionalInformation"></textarea>
-                    </div>
-                    <!--PROBLEMAS CARDIACOS-->
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 font-weight-bold">
-                        Problemas cardíacos:
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
-                        <p>Sim</p>
-                    </div>
-                    <div class="col-12">
-                        <textarea id="textCardiac" rows="2" class="w-100 mt-2 optionalInformation">Tenho tosse às quintas</textarea>
-                    </div>
-                    <!--PROBLEMAS ARTICULAÇOES-->
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 font-weight-bold">
-                        Problemas articulares/musculares:
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
-                        <p>Sim</p>
-                    </div>
-                    <div class="col-12">
-                        <textarea id="textProblems-Art" rows="2" class="w-100 mt-2 optionalInformation">Quando faço exercício fico durido mas só nas coxas, mesmo que treine peito fica a doer-me as coxas</textarea>
-                    </div>
-                    <!--OUTROS-->
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 font-weight-bold">
-                        Outros:
-                    </div>
-                    <div class="col-12">
-                        <textarea id="" rows="2" class="w-100 mt-2 optionalInformation" placeholder="Problemas que queira mencionar"></textarea>
-                    </div>
-                    <!--MEDICAÇÃO-->
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 font-weight-bold">
-                        Toma medicação regularmente?
-                    </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
-                        <p>Sim</p>
-                    </div>
-                    <div class="col-12">
-                        <textarea id="textMedication" rows="2" class="w-100 mt-2 optionalInformation" placeholder="Qual?">chá verde</textarea>
+            @{
+            foreach (var user in Model) { 
+                
+                <div class="col-12 col-md-6 col-lg-6 col-xl-3 mt-5 border-left border-right">
+                    <p class="text-center font-weight-bold h4">Informação clínica</p>
+                    <div class="row questionSettings">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 font-weight-bold mt-2">
+                            Altura (cm):
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                            <p>@user.altura</p>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 font-weight-bold mt-2">
+                            Sexo:
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                            <p>@user.sexo</p>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 font-weight-bold col-12">
+                            Diabetes:
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                            <p>@user.diabetes</p>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 font-weight-bold">
+                            Colesterol:
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                            <p>@user.colesterol</p>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 font-weight-bold">
+                            Problemas renais:
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                            <p>@user.renais</p>
+                        </div>
+                        <!--TRANSPLANTES-->
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 font-weight-bold">
+                            Transplantes:
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                            <p>@user.transplantes</p>
+                        </div>
+                        <div class="col-12">
+                            <textarea id="textTransplant" rows="2" class="w-100 mt-2 optionalInformation">@user.textoTransplantes</textarea>
+                        </div>
+                        <!--PROBLEMAS CARDIACOS-->
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 font-weight-bold">
+                            Problemas cardíacos:
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                            <p>@user.cardiacos</p>
+                        </div>
+                        <div class="col-12">
+                            <textarea id="textCardiac" rows="2" class="w-100 mt-2 optionalInformation">@user.textoCardiacos</textarea>
+                        </div>
+                        <!--PROBLEMAS ARTICULAÇOES-->
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 font-weight-bold">
+                            Problemas articulares/musculares:
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                            <p>@user.articulares</p>
+                        </div>
+                        <div class="col-12">
+                            <textarea id="textProblems-Art" rows="2" class="w-100 mt-2 optionalInformation">@user.textoArticulares</textarea>
+                        </div>
+                        <!--OUTROS-->
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 font-weight-bold">
+                            Outros:
+                        </div>
+                        <div class="col-12">
+                            <textarea id="" rows="2" class="w-100 mt-2 optionalInformation">@user.outros</textarea>
+                        </div>
+                        <!--MEDICAÇÃO-->
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 font-weight-bold">
+                            Toma medicação regularmente?
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
+                            <p>@user.medicacao</p>
+                        </div>
+                        <div class="col-12">
+                            <textarea id="textMedication" rows="2" class="w-100 mt-2 optionalInformation">@user.textoMedicacao</textarea>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <!--INFO TREINO--> 
+                }
+            }
+
+
+
+
+
+
+            <!--INFO TREINO-->
             <div class="col-12 col-md-6 col-lg-6 col-xl-3 mt-5 border-left border-right">
                 <p class="text-center font-weight-bold h4">Condições de Treino</p>
                 <div class="row questionSettings">
@@ -116,19 +127,19 @@
                         Nº de treinos semanais:
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
-                        <p>4</p>
+                        <p></p>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-2 font-weight-bold">
                         Local de treino:
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
-                        <p>Casa</p>
+                        <p></p>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 font-weight-bold">
                         Objetivos:
                     </div>
                     <div class="col-12">
-                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation">Ter o corpo do Figo quando ele tinha 30 anos</textarea>
+                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation"></textarea>
                     </div>
                 </div>
             </div>
@@ -140,7 +151,7 @@
                         Nº de Refeições diárias:
                     </div>
                     <div class="col-xl-8 col-lg-7 col-6">
-                        <p>3</p>
+                        <p></p>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-3 text-right font-weight-bold">
                         Local de Refeição
@@ -150,17 +161,17 @@
                         Ao acordar
                     </div>
                     <div class="col-xl-8 col-lg-7 col-6">
-                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição">Um café e um cigarro</textarea>
+                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation"></textarea>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-3 align-self-center">
-                        <textarea id="" rows="1" class="w-100 mt-2 optionalInformation ">Casa</textarea>
+                        <textarea id="" rows="1" class="w-100 mt-2 optionalInformation "></textarea>
                     </div>
 
                     <div class="col-xl-2 col-lg-3 col-3 mt-2 align-self-center font-weight-bold">
                         Pequeno-Almoço
                     </div>
                     <div class="col-xl-8 col-lg-7 col-6">
-                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição">Nada</textarea>
+                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation"></textarea>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-3 align-self-center">
                         <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
@@ -170,7 +181,7 @@
                         Meio da Manhã
                     </div>
                     <div class="col-xl-8 col-lg-7 col-6">
-                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição">Nada</textarea>
+                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation"></textarea>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-3 align-self-center">
                         <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
@@ -180,17 +191,17 @@
                         Almoço
                     </div>
                     <div class="col-xl-8 col-lg-7 col-6">
-                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição">Duas côdeas de pizza com queijo e fiambre e um sumo de ananás breasileiro</textarea>
+                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation"></textarea>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-3 align-self-center">
-                        <textarea id="" rows="1" class="w-100 mt-2 optionalInformation">Trabalho</textarea>
+                        <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
                     </div>
 
                     <div class="col-xl-2 col-lg-3 col-3 mt-2 align-self-center font-weight-bold">
                         Meio da Tarde
                     </div>
                     <div class="col-xl-8 col-lg-7 col-6">
-                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição">Nada</textarea>
+                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation"></textarea>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-3 align-self-center">
                         <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
@@ -200,17 +211,17 @@
                         Jantar
                     </div>
                     <div class="col-xl-8 col-lg-7 col-6">
-                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição">A pizza de onde eu tirei as côdeas e um copo de vinho</textarea>
+                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" ></textarea>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-3 align-self-center">
-                        <textarea id="" rows="1" class="w-100 mt-2 optionalInformation">Casa</textarea>
+                        <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
                     </div>
 
                     <div class="col-xl-2 col-lg-3 col-3 mt-2 align-self-center font-weight-bold">
                         Ceia
                     </div>
                     <div class="col-xl-8 col-lg-7 col-6">
-                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Descreva a sua refeição">Nada</textarea>
+                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation"></textarea>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-3 align-self-center">
                         <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
@@ -220,7 +231,7 @@
                         Alergias /Intolerâncias Alimentares
                     </div>
                     <div class="col-xl-8 col-lg-7 col-6">
-                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Alimentos que não possa comer">Leitão</textarea>
+                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" ></textarea>
                     </div>
                     <div class="col-xl-2 col-lg-2 col-3 align-self-center">
                         <textarea id="" rows="1" class="w-100 mt-2 optionalInformation"></textarea>
@@ -230,41 +241,42 @@
                         Mais Informações
                     </div>
                     <div class="col-xl-10 col-9">
-                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation" placeholder="Informação necessária que não foi possível escrever nas áreas anteriores"></textarea>
+                        <textarea id="" rows="3" class="w-100 mt-2 optionalInformation"></textarea>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="mt-5">
-            <h4>Enviar Plano de Nutrição</h4>
-        </div>
-        <div class="mt-3" >
-            <input type="file" name="name" value="" style="border:1px solid #DCDCDC;border-radius:5px;" />
-            <button id="sendPlan" type="submit" class="sendPlan ml-2">Enviar</button>
-            
-        </div>
-        <div class="mt-5">
-            <h4 class="mt-4">Planos Anteriores</h4>
-        </div>
-        <div>
-            <div class="row">
-                @{
-                        int i = 1;
-                        while (i<10) {
-                    <div class="col-4 col-sm-3 col-md-3 col-lg-2 text-center mt-2">
-                        <i class="fas fa-file-signature mt-2" style="font-size:100px;"></i>
-                        <p>05/06/2021</p>
-                        <button type="button" class="btn btn-success modalButton-Trainer" data-toggle="" data-target="">
-                            <p class="font-weight-bold h6 downloadButton-Trainer">Download</p>
-                        </button>
-                    </div>
-                        i++;
-                    }
-                }
+            <div class="mt-5">
+                <h4>Enviar Plano de Nutrição</h4>
+            </div>
+            <div class="mt-3">
+                <input type="file" name="name" value="" style="border:1px solid #DCDCDC;border-radius:5px;" />
+                <button id="sendPlan" type="submit" class="sendPlan ml-2">Enviar</button>
 
             </div>
+            <div class="mt-5">
+                <h4 class="mt-4">Planos Anteriores</h4>
+            </div>
+            <div>
+                <div class="row">
+                    @{
+                        int i = 1;
+                        while (i < 4)
+                        {
+                            <div class="col-4 col-sm-3 col-md-3 col-lg-2 text-center mt-2">
+                                <i class="fas fa-file-signature mt-2" style="font-size:100px;"></i>
+                                <p>05/06/2021</p>
+                                <button type="button" class="btn btn-success modalButton-Trainer" data-toggle="" data-target="">
+                                    <p class="font-weight-bold h6 downloadButton-Trainer">Download</p>
+                                </button>
+                            </div>
+                            i++;
+                        }
+                    }
+
+                </div>
+            </div>
         </div>
-    </div>
     
 
 

@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<NS_Fitness_Website.Models.perfil>
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_TrainerNavbar.cshtml";
@@ -17,9 +18,6 @@
 </head>
 <body>
 
-    @{
-
-    }
 
     <div class="" style="margin-top:80px;">
         <h3 class="text-center">Gestão de clientes</h3>
@@ -37,47 +35,40 @@
     </form>
     <!--MENU DE CLIENTES-->
     @{
-        int i = 0, aux = 1;
-        var idDropdown = "clientForm";
-        while (i < 15)
+        foreach(var pessoa in Model )
         {
-            var dropdownMenuClient = idDropdown + aux;
-
             <div class="pl-4 pr-4 mt-3">
                 <div name="clientDiv" class="dropdown buttonTrainer-Format">
-                    <button class="btn w-100 text-white" type="button" id="" onclick="openDropdown('@dropdownMenuClient');">
-                        <span class="h6 float-left"><img class="userImage" src="~/Content/images/user.png" alt="Utilizador" style="border:1px solid white;"></span>
-                        <p class="float-left ml-4 mt-4 textFormat">Carlos Santos</p>
+                    <button class="btn w-100 text-white" type="button" id="" onclick="openDropdown(@pessoa.id);">
+                        <span class="h6 float-left"><img class="userImage" src="@pessoa.foto" alt="Utilizador" style="border:1px solid white;"></span>
+                        <p class="float-left ml-4 mt-4 textFormat">@pessoa.nomePerfil</p>
                         <span class="float-right mt-3 textFormat-Icon"><i class="fas fa-plus-square ml-4 " style="background-color:#41566C; color:#E2EEFF"></i></span>
                     </button>
-                    <div id="@dropdownMenuClient" class="d-none text-center dropClient-Format">
+                    <div id="@pessoa.id" class="d-none text-center dropClient-Format">
                         <form id="submitMesures" class="p-3">
                             <div class="row">
                                 <div class="form-group col-12 col-sm-6 col-md-4 col-lg dropText-Format">
-                                    <i class="fas fa-user-circle navPersonal-Backgroung-Front mr-1"></i>@Html.ActionLink("Perfil", "ClientePerfil", "Trainer", new { @class = "DDCT" })
+                                    <i class="fas fa-user-circle navPersonal-Backgroung-Front mr-1"></i>@Html.ActionLink("Perfil", "ClientePerfil", "Trainer", new { id = pessoa.id }, new { @class = "DDCT" })
                                 </div>
                                 <div class="form-group col-12 col-sm-6 col-md-4 col-lg dropText-Format">
-                                    <i class="fas fa-user-circle navPersonal-Backgroung-Front mr-1"></i>@Html.ActionLink("Treinos", "ClienteTreinos", "Trainer", new { @class = "DDCT" })
+                                    <i class="fas fa-user-circle navPersonal-Backgroung-Front mr-1"></i>@Html.ActionLink("Treinos", "ClienteTreinos", "Trainer", new { id = pessoa.id }, new { @class = "DDCT" })
                                 </div>
                                 <div class="form-group col-12 col-sm-6 col-md-4 col-lg dropText-Format">
-                                    <i class="fas fa-user-circle navPersonal-Backgroung-Front mr-1"></i>@Html.ActionLink("Planos de Nutrição", "ClienteNutricao", "Trainer", new { @class = "DDCT" })
+                                    <i class="fas fa-user-circle navPersonal-Backgroung-Front mr-1"></i>@Html.ActionLink("Planos de Nutrição", "ClienteNutricao", "Trainer", new { id = pessoa.id }, new { @class = "DDCT" })
                                 </div>
                                 <div class="form-group col-12 col-sm-6 col-md-4 col-lg dropText-Format">
-                                    <i class="fas fa-user-circle navPersonal-Backgroung-Front mr-1"></i>@Html.ActionLink("Progresso", "ClienteProgresso", "Trainer", new { @class = "DDCT" })
+                                    <i class="fas fa-user-circle navPersonal-Backgroung-Front mr-1"></i>@Html.ActionLink("Progresso", "ClienteProgresso", "Trainer", new { id = pessoa.id }, new { @class = "DDCT" })
                                 </div>
                                 <div class="form-group col-12 col-sm-6 col-md-4 col-lg dropText-Format">
-                                    <i class="fas fa-user-circle navPersonal-Backgroung-Front mr-1"></i>@Html.ActionLink("Mensagens", "ClienteMensagens", "Trainer", new { @class = "DDCT" })
+                                    <i class="fas fa-user-circle navPersonal-Backgroung-Front mr-1"></i>@Html.ActionLink("Mensagens", "ClienteMensagens", "Trainer", new { id = pessoa.id }, new { @class = "DDCT" })
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-            i++;
-            aux++;
         }
     }
-
 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="~/Scripts/jquery-3.4.1.min.js"></script>

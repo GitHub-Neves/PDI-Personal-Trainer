@@ -1,4 +1,4 @@
-@model NS_Fitness_Website.Models.perfil
+﻿@model NS_Fitness_Website.Models.perfil
 
 @{
     ViewBag.Title = "Perfil";
@@ -56,31 +56,32 @@
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="fullName">Nome</label>
-                                        <input type="text" class="form-control" id="fullName" placeholder="@Html.DisplayFor(model => model.nomeCompleto)" readonly>
+                                        <input type="text" class="form-control" id="fullName" value="@Html.DisplayFor(model => model.nomeCompleto)" readonly>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" placeholder="@Html.DisplayFor(model => model.email)" readonly>
+                                        <input type="email" class="form-control" id="email" value="@Html.DisplayFor(model => model.email)" readonly>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="contact">Contacto</label>
-                                        <input type="text" class="form-control" id="contact" placeholder="@Html.DisplayFor(model => model.contacto)" readonly>
+                                        <input type="text" class="form-control" id="contact" value="@Html.DisplayFor(model => model.contacto)" readonly>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="age">Data de Nascimento</label>
-                                        <input type="date" class="form-control" id="birthDate" placeholder="@Html.DisplayFor(model => model.dataNascimento)" readonly>
+                                        <input type="text" class="form-control" id="birthDate" value="@Html.DisplayFor(model => model.dataNascimento)" readonly>
+                                        <input type="date" class="form-control d-none" id="birthDate-Input" value="@Html.DisplayFor(model => model.dataNascimento)">
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="NIF">NIF</label>
-                                        <input type="url" class="form-control" id="NIF" placeholder="@Html.DisplayFor(model => model.NIF)" readonly>
+                                        <input type="url" class="form-control" id="NIF" value="@Html.DisplayFor(model => model.NIF)" readonly>
                                     </div>
                                 </div>
                             </div>
@@ -91,25 +92,25 @@
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="Street">Rua</label>
-                                        <input type="text" class="form-control" id="street" placeholder="@Html.DisplayFor(model => model.rua)" readonly>
+                                        <input type="text" class="form-control" id="street" value="@Html.DisplayFor(model => model.rua)" readonly>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="locality">Localidade</label>
-                                        <input type="text" class="form-control" id="locality" placeholder="@Html.DisplayFor(model => model.localidade)" readonly>
+                                        <input type="text" class="form-control" id="locality" value="@Html.DisplayFor(model => model.localidade)" readonly>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="city">Cidade</label>
-                                        <input type="text" class="form-control" id="city" placeholder="@Html.DisplayFor(model => model.cidade)" readonly>
+                                        <input type="text" class="form-control" id="city" value="@Html.DisplayFor(model => model.cidade)" readonly>
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
                                         <label for="postalCode">Código Postal</label>
-                                        <input type="text" class="form-control" id="postalCode" placeholder="@Html.DisplayFor(model => model.codigoPostal)" readonly>
+                                        <input type="text" class="form-control" id="postalCode" value="@Html.DisplayFor(model => model.codigoPostal)" readonly>
                                     </div>
                                 </div>                             
                             </div>
@@ -164,6 +165,7 @@
         let street = document.getElementById('street');
         let NIF = document.getElementById('NIF');
         let birthDate = document.getElementById('birthDate');
+        let birthDateInput = document.getElementById('birthDate-Input');
         let contact = document.getElementById('contact');
         let email = document.getElementById('email');
         let fullName = document.getElementById('fullName');
@@ -171,6 +173,8 @@
             confirm.classList.toggle('d-none');
             reset.classList.toggle('d-none');
             edit.classList.toggle('d-none');
+            birthDate.classList.toggle('d-none');
+            birthDateInput.classList.toggle('d-none');
 
             postalCode.readOnly = false;
             city.readOnly = false;
@@ -186,6 +190,8 @@
             confirm.classList.toggle('d-none');
             reset.classList.toggle('d-none');
             edit.classList.toggle('d-none');
+            birthDate.classList.toggle('d-none');
+            birthDateInput.classList.toggle('d-none');
             /*espaço para submeter os dados
              
              */

@@ -1,4 +1,5 @@
-﻿
+﻿@model NS_Fitness_Website.Models.user_clinica
+
 @{
     ViewBag.Title = "PlanosNutricao";
     Layout = "~/Views/Shared/_AreaPessoal.cshtml";
@@ -16,7 +17,7 @@
     <script src="https://kit.fontawesome.com/a7c7c4a450.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <p class="h4">Informações</p>
+    <p class="h4">Informações @Html.DisplayFor(model => model.altura)</p>
     <div class="container-fluid">
         <!--Informações clínicas-->
         <div class="row">
@@ -40,7 +41,7 @@
                                         Altura (cm):
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-right">
-                                        <input id="cmHeight" class="personHeight" type="number" value="" min="120" max="220">
+                                        <input id="cmHeight" class="personHeight" type="number" value="" min="120" max="220" placeholder="@Html.DisplayFor(model => model.altura)">
                                     </div>
                                     <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mt-2">
                                         Sexo:
@@ -343,7 +344,7 @@
     
     <div class="row">
         @{ int i = 1;
-            while (i < 18)
+            while (i < 10)
             {
 
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 text-center mt-2">
