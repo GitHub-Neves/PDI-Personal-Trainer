@@ -381,3 +381,112 @@ a.DDCT {
     border: 2px solid #28A745;
     border-radius: 5px;
 }
+
+.conteudo {
+    max-width: 100%;
+    margin: auto;
+    max-height: auto;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.barraH {
+    width: 100%;
+    background-color: burlywood;
+    color: burlywood;
+    height: 2px;
+    outline-color: burlywood;
+}
+
+.imagem-formatada {
+    border-radius: 15px;
+    padding-block: 0.5rem;
+}
+
+.fundo {
+    background-color: beige;
+    border-radius: 4px;
+    margin-bottom: 2px;
+}
+
+.subfundo {
+    background-color: rgba(140, 140, 140, 0.3);
+}
+
+.form-msg {
+    max-width: 300px;
+    background-color: white;
+    top: 50%;
+    bottom: 20px;
+    padding-top: 2px;
+    border: 1px solid #76b51b;
+    border-radius: 25px 5px;
+}
+
+/* LOGIN / REGISTO*/
+.espaço {
+    display: flex;
+    justify-content: space-between;
+}
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+.box-form {
+    width: 500px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.content-form {
+    width: 100%;
+    padding: 0px 20px;
+    margin: 5px 0px;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+}
+
+.content-form h2 {
+        text-align: center;
+        font-size: 30px;
+        padding: 10px;
+        box-sizing: border-box;
+}
+
+.form-group {
+    width: 100%;
+    padding: 5px 0px;
+}
+
+.labelIndex {
+    display: block;
+    padding: 5px 0px;
+    color: #ff6a00;
+    font-weight: bold;
+}
+
+.txt-input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 1px #000;
+}
+
+.field-validation-error {
+    color: #ff0000;
+    padding: 2px 0px;
+    display: block;
+    font-size: 12px;
+}
+
+input[type="submit"] {
+    background: #ff6a00;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
