@@ -15,7 +15,9 @@ namespace NS_Fitness_Website.Models
     public partial class user_plano
     {
         public int id { get; set; }
-        public Nullable<int> userId { get; set; }
         public string planoNutricao { get; set; }
+        public int perfil_id { get; set; }
+    
+        public virtual perfil perfil { get; set; }
     }
 }

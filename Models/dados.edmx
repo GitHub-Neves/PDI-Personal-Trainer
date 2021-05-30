@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
@@ -8,12 +8,13 @@
         <EntityType Name="mensagens">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="perfil_id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="userId" Type="int" />
           <Property Name="texto" Type="varchar" MaxLength="45" />
           <Property Name="userVisto" Type="varchar" MaxLength="45" />
           <Property Name="trainerVisto" Type="varchar" MaxLength="45" />
+          <Property Name="perfil_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="perfil">
           <Key>
@@ -24,8 +25,8 @@
           <Property Name="password" Type="varchar" MaxLength="45" />
           <Property Name="dataInscricao" Type="date" />
           <Property Name="nomeCompleto" Type="varchar" MaxLength="200" />
-          <Property Name="nomePerfil" Type="varchar" MaxLength="45" />
-          <Property Name="contacto" Type="int" />
+          <Property Name="nomePerfil" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="contacto" Type="int" Nullable="false" />
           <Property Name="dataNascimento" Type="date" />
           <Property Name="NIF" Type="int" />
           <Property Name="rua" Type="varchar" MaxLength="200" />
@@ -38,17 +39,18 @@
         <EntityType Name="treinos">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="perfil_id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="userId" Type="int" />
           <Property Name="link" Type="varchar" MaxLength="200" />
+          <Property Name="perfil_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="user_alimentacao">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="perfil_id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="userId" Type="int" />
           <Property Name="refeicoesDiarias" Type="int" />
           <Property Name="acordar" Type="varchar" MaxLength="500" />
           <Property Name="localAcordar" Type="varchar" MaxLength="45" />
@@ -67,13 +69,14 @@
           <Property Name="alergias" Type="varchar" MaxLength="500" />
           <Property Name="info" Type="varchar" MaxLength="500" />
           <Property Name="respondido" Type="varchar" MaxLength="45" />
+          <Property Name="perfil_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="user_clinica">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="perfil_id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="userId" Type="int" />
           <Property Name="altura" Type="int" />
           <Property Name="sexo" Type="varchar" MaxLength="45" />
           <Property Name="diabetes" Type="varchar" MaxLength="45" />
@@ -89,60 +92,174 @@
           <Property Name="medicacao" Type="varchar" MaxLength="45" />
           <Property Name="textoMedicacao" Type="varchar" MaxLength="500" />
           <Property Name="respondido" Type="varchar" MaxLength="45" />
+          <Property Name="perfil_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="user_fotos">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="perfil_id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="userId" Type="int" />
           <Property Name="data" Type="date" />
           <Property Name="frontal" Type="varchar" MaxLength="200" />
           <Property Name="lateral" Type="varchar" MaxLength="200" />
           <Property Name="traseira" Type="varchar" MaxLength="200" />
+          <Property Name="perfil_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="user_medicoes">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="perfil_id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="userId" Type="int" />
           <Property Name="braco" Type="decimal" Precision="10" Scale="0" />
           <Property Name="abdominal" Type="decimal" Precision="10" Scale="0" />
           <Property Name="peitoral" Type="decimal" Precision="10" Scale="0" />
           <Property Name="coxa" Type="decimal" Precision="10" Scale="0" />
           <Property Name="gemeo" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="perfil_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="user_peso">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="perfil_id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="userId" Type="int" />
           <Property Name="data" Type="date" />
           <Property Name="peso" Type="decimal" Precision="10" Scale="0" />
           <Property Name="mGorda" Type="decimal" Precision="10" Scale="0" />
           <Property Name="mMagra" Type="decimal" Precision="10" Scale="0" />
+          <Property Name="perfil_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="user_plano">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="perfil_id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="userId" Type="int" />
           <Property Name="planoNutricao" Type="varchar" MaxLength="200" />
+          <Property Name="perfil_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="user_treino">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="perfil_id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="userId" Type="int" />
           <Property Name="treinosSemanais" Type="int" />
           <Property Name="local" Type="varchar" MaxLength="45" />
           <Property Name="objetivos" Type="varchar" MaxLength="45" />
           <Property Name="respondido" Type="varchar" MaxLength="45" />
+          <Property Name="perfil_id" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="fk_mensagens_perfil1">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+          <End Role="mensagens" Type="Self.mensagens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="mensagens">
+              <PropertyRef Name="perfil_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_treinos_perfil1">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+          <End Role="treinos" Type="Self.treinos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="treinos">
+              <PropertyRef Name="perfil_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_alimentacao_perfil1">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+          <End Role="user_alimentacao" Type="Self.user_alimentacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_alimentacao">
+              <PropertyRef Name="perfil_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_clinica_perfil1">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+          <End Role="user_clinica" Type="Self.user_clinica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_clinica">
+              <PropertyRef Name="perfil_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_fotos_perfil1">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+          <End Role="user_fotos" Type="Self.user_fotos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_fotos">
+              <PropertyRef Name="perfil_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_medicoes_perfil1">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+          <End Role="user_medicoes" Type="Self.user_medicoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_medicoes">
+              <PropertyRef Name="perfil_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_peso_perfil1">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+          <End Role="user_peso" Type="Self.user_peso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_peso">
+              <PropertyRef Name="perfil_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_plano_perfil1">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+          <End Role="user_plano" Type="Self.user_plano" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_plano">
+              <PropertyRef Name="perfil_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_treino_perfil1">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+          <End Role="user_treino" Type="Self.user_treino" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_treino">
+              <PropertyRef Name="perfil_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="pdiModelStoreContainer">
           <EntitySet Name="mensagens" EntityType="Self.mensagens" Schema="pdi" store:Type="Tables" />
           <EntitySet Name="perfil" EntityType="Self.perfil" Schema="pdi" store:Type="Tables" />
@@ -154,6 +271,42 @@
           <EntitySet Name="user_peso" EntityType="Self.user_peso" Schema="pdi" store:Type="Tables" />
           <EntitySet Name="user_plano" EntityType="Self.user_plano" Schema="pdi" store:Type="Tables" />
           <EntitySet Name="user_treino" EntityType="Self.user_treino" Schema="pdi" store:Type="Tables" />
+          <AssociationSet Name="fk_mensagens_perfil1" Association="Self.fk_mensagens_perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="mensagens" EntitySet="mensagens" />
+          </AssociationSet>
+          <AssociationSet Name="fk_treinos_perfil1" Association="Self.fk_treinos_perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="treinos" EntitySet="treinos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_alimentacao_perfil1" Association="Self.fk_user_alimentacao_perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="user_alimentacao" EntitySet="user_alimentacao" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_clinica_perfil1" Association="Self.fk_user_clinica_perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="user_clinica" EntitySet="user_clinica" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_fotos_perfil1" Association="Self.fk_user_fotos_perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="user_fotos" EntitySet="user_fotos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_medicoes_perfil1" Association="Self.fk_user_medicoes_perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="user_medicoes" EntitySet="user_medicoes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_peso_perfil1" Association="Self.fk_user_peso_perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="user_peso" EntitySet="user_peso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_plano_perfil1" Association="Self.fk_user_plano_perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="user_plano" EntitySet="user_plano" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_treino_perfil1" Association="Self.fk_user_treino_perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="user_treino" EntitySet="user_treino" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -163,12 +316,14 @@
         <EntityType Name="mensagens">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="perfil_id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="userId" Type="Int32" />
           <Property Name="texto" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="userVisto" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="trainerVisto" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="perfil_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="perfil" Relationship="Self.fk_mensagens_perfil1" FromRole="mensagens" ToRole="perfil" />
         </EntityType>
         <EntityType Name="perfil">
           <Key>
@@ -179,8 +334,8 @@
           <Property Name="password" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="dataInscricao" Type="DateTime" />
           <Property Name="nomeCompleto" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="nomePerfil" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="contacto" Type="Int32" />
+          <Property Name="nomePerfil" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="contacto" Type="Int32" Nullable="false" />
           <Property Name="dataNascimento" Type="DateTime" />
           <Property Name="NIF" Type="Int32" />
           <Property Name="rua" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
@@ -189,21 +344,32 @@
           <Property Name="codigoPostal" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="foto" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="respondido" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="mensagens" Relationship="Self.fk_mensagens_perfil1" FromRole="perfil" ToRole="mensagens" />
+          <NavigationProperty Name="treinos" Relationship="Self.fk_treinos_perfil1" FromRole="perfil" ToRole="treinos" />
+          <NavigationProperty Name="user_alimentacao" Relationship="Self.fk_user_alimentacao_perfil1" FromRole="perfil" ToRole="user_alimentacao" />
+          <NavigationProperty Name="user_clinica" Relationship="Self.fk_user_clinica_perfil1" FromRole="perfil" ToRole="user_clinica" />
+          <NavigationProperty Name="user_fotos" Relationship="Self.fk_user_fotos_perfil1" FromRole="perfil" ToRole="user_fotos" />
+          <NavigationProperty Name="user_medicoes" Relationship="Self.fk_user_medicoes_perfil1" FromRole="perfil" ToRole="user_medicoes" />
+          <NavigationProperty Name="user_peso" Relationship="Self.fk_user_peso_perfil1" FromRole="perfil" ToRole="user_peso" />
+          <NavigationProperty Name="user_plano" Relationship="Self.fk_user_plano_perfil1" FromRole="perfil" ToRole="user_plano" />
+          <NavigationProperty Name="user_treino" Relationship="Self.fk_user_treino_perfil1" FromRole="perfil" ToRole="user_treino" />
         </EntityType>
         <EntityType Name="treinos">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="perfil_id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="userId" Type="Int32" />
           <Property Name="link" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="perfil_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="perfil" Relationship="Self.fk_treinos_perfil1" FromRole="treinos" ToRole="perfil" />
         </EntityType>
         <EntityType Name="user_alimentacao">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="perfil_id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="userId" Type="Int32" />
           <Property Name="refeicoesDiarias" Type="Int32" />
           <Property Name="acordar" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="localAcordar" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
@@ -222,13 +388,15 @@
           <Property Name="alergias" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="info" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="respondido" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="perfil_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="perfil" Relationship="Self.fk_user_alimentacao_perfil1" FromRole="user_alimentacao" ToRole="perfil" />
         </EntityType>
         <EntityType Name="user_clinica">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="perfil_id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="userId" Type="Int32" />
           <Property Name="altura" Type="Int32" />
           <Property Name="sexo" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="diabetes" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
@@ -244,61 +412,181 @@
           <Property Name="medicacao" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="textoMedicacao" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="respondido" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="perfil_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="perfil" Relationship="Self.fk_user_clinica_perfil1" FromRole="user_clinica" ToRole="perfil" />
         </EntityType>
         <EntityType Name="user_fotos">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="perfil_id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="userId" Type="Int32" />
           <Property Name="data" Type="DateTime" />
           <Property Name="frontal" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="lateral" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="traseira" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="perfil_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="perfil" Relationship="Self.fk_user_fotos_perfil1" FromRole="user_fotos" ToRole="perfil" />
         </EntityType>
         <EntityType Name="user_medicoes">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="perfil_id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="userId" Type="Int32" />
           <Property Name="braco" Type="Decimal" />
           <Property Name="abdominal" Type="Decimal" />
           <Property Name="peitoral" Type="Decimal" />
           <Property Name="coxa" Type="Decimal" />
           <Property Name="gemeo" Type="Decimal" />
+          <Property Name="perfil_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="perfil" Relationship="Self.fk_user_medicoes_perfil1" FromRole="user_medicoes" ToRole="perfil" />
         </EntityType>
         <EntityType Name="user_peso">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="perfil_id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="userId" Type="Int32" />
           <Property Name="data" Type="DateTime" />
           <Property Name="peso" Type="Decimal" />
           <Property Name="mGorda" Type="Decimal" />
           <Property Name="mMagra" Type="Decimal" />
+          <Property Name="perfil_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="perfil" Relationship="Self.fk_user_peso_perfil1" FromRole="user_peso" ToRole="perfil" />
         </EntityType>
         <EntityType Name="user_plano">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="perfil_id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="userId" Type="Int32" />
           <Property Name="planoNutricao" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="perfil_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="perfil" Relationship="Self.fk_user_plano_perfil1" FromRole="user_plano" ToRole="perfil" />
         </EntityType>
         <EntityType Name="user_treino">
           <Key>
             <PropertyRef Name="id" />
+            <PropertyRef Name="perfil_id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="userId" Type="Int32" />
           <Property Name="treinosSemanais" Type="Int32" />
           <Property Name="local" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="objetivos" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="respondido" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="perfil_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="perfil" Relationship="Self.fk_user_treino_perfil1" FromRole="user_treino" ToRole="perfil" />
         </EntityType>
-        <EntityContainer Name="DatabasePDI" annotation:LazyLoadingEnabled="true">
+        <Association Name="fk_mensagens_perfil1">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+          <End Role="mensagens" Type="Self.mensagens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="mensagens">
+              <PropertyRef Name="perfil_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_treinos_perfil1">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+          <End Role="treinos" Type="Self.treinos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="treinos">
+              <PropertyRef Name="perfil_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_alimentacao_perfil1">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+          <End Role="user_alimentacao" Type="Self.user_alimentacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_alimentacao">
+              <PropertyRef Name="perfil_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_clinica_perfil1">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+          <End Role="user_clinica" Type="Self.user_clinica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_clinica">
+              <PropertyRef Name="perfil_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_fotos_perfil1">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+          <End Role="user_fotos" Type="Self.user_fotos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_fotos">
+              <PropertyRef Name="perfil_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_medicoes_perfil1">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+          <End Role="user_medicoes" Type="Self.user_medicoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_medicoes">
+              <PropertyRef Name="perfil_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_peso_perfil1">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+          <End Role="user_peso" Type="Self.user_peso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_peso">
+              <PropertyRef Name="perfil_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_plano_perfil1">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+          <End Role="user_plano" Type="Self.user_plano" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_plano">
+              <PropertyRef Name="perfil_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_user_treino_perfil1">
+          <End Role="perfil" Type="Self.perfil" Multiplicity="1" />
+          <End Role="user_treino" Type="Self.user_treino" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="perfil">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_treino">
+              <PropertyRef Name="perfil_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DatabaseWebsite" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="mensagens" EntityType="Self.mensagens" />
           <EntitySet Name="perfil" EntityType="Self.perfil" />
           <EntitySet Name="treinos" EntityType="Self.treinos" />
@@ -309,21 +597,57 @@
           <EntitySet Name="user_peso" EntityType="Self.user_peso" />
           <EntitySet Name="user_plano" EntityType="Self.user_plano" />
           <EntitySet Name="user_treino" EntityType="Self.user_treino" />
+          <AssociationSet Name="fk_mensagens_perfil1" Association="Self.fk_mensagens_perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="mensagens" EntitySet="mensagens" />
+          </AssociationSet>
+          <AssociationSet Name="fk_treinos_perfil1" Association="Self.fk_treinos_perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="treinos" EntitySet="treinos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_alimentacao_perfil1" Association="Self.fk_user_alimentacao_perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="user_alimentacao" EntitySet="user_alimentacao" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_clinica_perfil1" Association="Self.fk_user_clinica_perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="user_clinica" EntitySet="user_clinica" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_fotos_perfil1" Association="Self.fk_user_fotos_perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="user_fotos" EntitySet="user_fotos" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_medicoes_perfil1" Association="Self.fk_user_medicoes_perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="user_medicoes" EntitySet="user_medicoes" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_peso_perfil1" Association="Self.fk_user_peso_perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="user_peso" EntitySet="user_peso" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_plano_perfil1" Association="Self.fk_user_plano_perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="user_plano" EntitySet="user_plano" />
+          </AssociationSet>
+          <AssociationSet Name="fk_user_treino_perfil1" Association="Self.fk_user_treino_perfil1">
+            <End Role="perfil" EntitySet="perfil" />
+            <End Role="user_treino" EntitySet="user_treino" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="pdiModelStoreContainer" CdmEntityContainer="DatabasePDI">
+        <EntityContainerMapping StorageEntityContainer="pdiModelStoreContainer" CdmEntityContainer="DatabaseWebsite">
           <EntitySetMapping Name="mensagens">
             <EntityTypeMapping TypeName="pdiModel.mensagens">
               <MappingFragment StoreEntitySet="mensagens">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="userId" ColumnName="userId" />
                 <ScalarProperty Name="texto" ColumnName="texto" />
                 <ScalarProperty Name="userVisto" ColumnName="userVisto" />
                 <ScalarProperty Name="trainerVisto" ColumnName="trainerVisto" />
+                <ScalarProperty Name="perfil_id" ColumnName="perfil_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -352,8 +676,8 @@
             <EntityTypeMapping TypeName="pdiModel.treinos">
               <MappingFragment StoreEntitySet="treinos">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="userId" ColumnName="userId" />
                 <ScalarProperty Name="link" ColumnName="link" />
+                <ScalarProperty Name="perfil_id" ColumnName="perfil_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -361,7 +685,6 @@
             <EntityTypeMapping TypeName="pdiModel.user_alimentacao">
               <MappingFragment StoreEntitySet="user_alimentacao">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="userId" ColumnName="userId" />
                 <ScalarProperty Name="refeicoesDiarias" ColumnName="refeicoesDiarias" />
                 <ScalarProperty Name="acordar" ColumnName="acordar" />
                 <ScalarProperty Name="localAcordar" ColumnName="localAcordar" />
@@ -380,6 +703,7 @@
                 <ScalarProperty Name="alergias" ColumnName="alergias" />
                 <ScalarProperty Name="info" ColumnName="info" />
                 <ScalarProperty Name="respondido" ColumnName="respondido" />
+                <ScalarProperty Name="perfil_id" ColumnName="perfil_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -387,7 +711,6 @@
             <EntityTypeMapping TypeName="pdiModel.user_clinica">
               <MappingFragment StoreEntitySet="user_clinica">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="userId" ColumnName="userId" />
                 <ScalarProperty Name="altura" ColumnName="altura" />
                 <ScalarProperty Name="sexo" ColumnName="sexo" />
                 <ScalarProperty Name="diabetes" ColumnName="diabetes" />
@@ -403,6 +726,7 @@
                 <ScalarProperty Name="medicacao" ColumnName="medicacao" />
                 <ScalarProperty Name="textoMedicacao" ColumnName="textoMedicacao" />
                 <ScalarProperty Name="respondido" ColumnName="respondido" />
+                <ScalarProperty Name="perfil_id" ColumnName="perfil_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -410,11 +734,11 @@
             <EntityTypeMapping TypeName="pdiModel.user_fotos">
               <MappingFragment StoreEntitySet="user_fotos">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="userId" ColumnName="userId" />
                 <ScalarProperty Name="data" ColumnName="data" />
                 <ScalarProperty Name="frontal" ColumnName="frontal" />
                 <ScalarProperty Name="lateral" ColumnName="lateral" />
                 <ScalarProperty Name="traseira" ColumnName="traseira" />
+                <ScalarProperty Name="perfil_id" ColumnName="perfil_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -422,12 +746,12 @@
             <EntityTypeMapping TypeName="pdiModel.user_medicoes">
               <MappingFragment StoreEntitySet="user_medicoes">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="userId" ColumnName="userId" />
                 <ScalarProperty Name="braco" ColumnName="braco" />
                 <ScalarProperty Name="abdominal" ColumnName="abdominal" />
                 <ScalarProperty Name="peitoral" ColumnName="peitoral" />
                 <ScalarProperty Name="coxa" ColumnName="coxa" />
                 <ScalarProperty Name="gemeo" ColumnName="gemeo" />
+                <ScalarProperty Name="perfil_id" ColumnName="perfil_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -435,11 +759,11 @@
             <EntityTypeMapping TypeName="pdiModel.user_peso">
               <MappingFragment StoreEntitySet="user_peso">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="userId" ColumnName="userId" />
                 <ScalarProperty Name="data" ColumnName="data" />
                 <ScalarProperty Name="peso" ColumnName="peso" />
                 <ScalarProperty Name="mGorda" ColumnName="mGorda" />
                 <ScalarProperty Name="mMagra" ColumnName="mMagra" />
+                <ScalarProperty Name="perfil_id" ColumnName="perfil_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -447,8 +771,8 @@
             <EntityTypeMapping TypeName="pdiModel.user_plano">
               <MappingFragment StoreEntitySet="user_plano">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="userId" ColumnName="userId" />
                 <ScalarProperty Name="planoNutricao" ColumnName="planoNutricao" />
+                <ScalarProperty Name="perfil_id" ColumnName="perfil_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -456,11 +780,11 @@
             <EntityTypeMapping TypeName="pdiModel.user_treino">
               <MappingFragment StoreEntitySet="user_treino">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="userId" ColumnName="userId" />
                 <ScalarProperty Name="treinosSemanais" ColumnName="treinosSemanais" />
                 <ScalarProperty Name="local" ColumnName="local" />
                 <ScalarProperty Name="objetivos" ColumnName="objetivos" />
                 <ScalarProperty Name="respondido" ColumnName="respondido" />
+                <ScalarProperty Name="perfil_id" ColumnName="perfil_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

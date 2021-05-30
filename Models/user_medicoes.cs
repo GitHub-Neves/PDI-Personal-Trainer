@@ -15,11 +15,13 @@ namespace NS_Fitness_Website.Models
     public partial class user_medicoes
     {
         public int id { get; set; }
-        public Nullable<int> userId { get; set; }
         public Nullable<decimal> braco { get; set; }
         public Nullable<decimal> abdominal { get; set; }
         public Nullable<decimal> peitoral { get; set; }
         public Nullable<decimal> coxa { get; set; }
         public Nullable<decimal> gemeo { get; set; }
+        public int perfil_id { get; set; }
+    
+        public virtual perfil perfil { get; set; }
     }
 }

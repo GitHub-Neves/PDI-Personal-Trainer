@@ -15,7 +15,6 @@ namespace NS_Fitness_Website.Models
     public partial class user_alimentacao
     {
         public int id { get; set; }
-        public Nullable<int> userId { get; set; }
         public Nullable<int> refeicoesDiarias { get; set; }
         public string acordar { get; set; }
         public string localAcordar { get; set; }
@@ -34,5 +33,8 @@ namespace NS_Fitness_Website.Models
         public string alergias { get; set; }
         public string info { get; set; }
         public string respondido { get; set; }
+        public int perfil_id { get; set; }
+    
+        public virtual perfil perfil { get; set; }
     }
 }

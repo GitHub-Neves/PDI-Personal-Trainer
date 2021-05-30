@@ -15,9 +15,11 @@ namespace NS_Fitness_Website.Models
     public partial class mensagens
     {
         public int id { get; set; }
-        public Nullable<int> userId { get; set; }
         public string texto { get; set; }
         public string userVisto { get; set; }
         public string trainerVisto { get; set; }
+        public int perfil_id { get; set; }
+    
+        public virtual perfil perfil { get; set; }
     }
 }

@@ -14,13 +14,27 @@ namespace NS_Fitness_Website.Models
     
     public partial class perfil
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public perfil()
+        {
+            this.mensagens = new HashSet<mensagens>();
+            this.treinos = new HashSet<treinos>();
+            this.user_alimentacao = new HashSet<user_alimentacao>();
+            this.user_clinica = new HashSet<user_clinica>();
+            this.user_fotos = new HashSet<user_fotos>();
+            this.user_medicoes = new HashSet<user_medicoes>();
+            this.user_peso = new HashSet<user_peso>();
+            this.user_plano = new HashSet<user_plano>();
+            this.user_treino = new HashSet<user_treino>();
+        }
+    
         public int id { get; set; }
         public string email { get; set; }
         public string password { get; set; }
         public Nullable<System.DateTime> dataInscricao { get; set; }
         public string nomeCompleto { get; set; }
         public string nomePerfil { get; set; }
-        public Nullable<int> contacto { get; set; }
+        public int contacto { get; set; }
         public Nullable<System.DateTime> dataNascimento { get; set; }
         public Nullable<int> NIF { get; set; }
         public string rua { get; set; }
@@ -29,5 +43,24 @@ namespace NS_Fitness_Website.Models
         public string codigoPostal { get; set; }
         public string foto { get; set; }
         public string respondido { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<mensagens> mensagens { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<treinos> treinos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<user_alimentacao> user_alimentacao { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<user_clinica> user_clinica { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<user_fotos> user_fotos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<user_medicoes> user_medicoes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<user_peso> user_peso { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<user_plano> user_plano { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<user_treino> user_treino { get; set; }
     }
 }

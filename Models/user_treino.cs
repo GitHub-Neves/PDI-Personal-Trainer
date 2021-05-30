@@ -15,10 +15,12 @@ namespace NS_Fitness_Website.Models
     public partial class user_treino
     {
         public int id { get; set; }
-        public Nullable<int> userId { get; set; }
         public Nullable<int> treinosSemanais { get; set; }
         public string local { get; set; }
         public string objetivos { get; set; }
         public string respondido { get; set; }
+        public int perfil_id { get; set; }
+    
+        public virtual perfil perfil { get; set; }
     }
 }

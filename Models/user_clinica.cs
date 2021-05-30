@@ -15,7 +15,6 @@ namespace NS_Fitness_Website.Models
     public partial class user_clinica
     {
         public int id { get; set; }
-        public Nullable<int> userId { get; set; }
         public Nullable<int> altura { get; set; }
         public string sexo { get; set; }
         public string diabetes { get; set; }
@@ -31,5 +30,8 @@ namespace NS_Fitness_Website.Models
         public string medicacao { get; set; }
         public string textoMedicacao { get; set; }
         public string respondido { get; set; }
+        public int perfil_id { get; set; }
+    
+        public virtual perfil perfil { get; set; }
     }
 }

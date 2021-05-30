@@ -4,17 +4,26 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1bd22c64e2bf482c820d48639a907469" Name="Diagram1">
-        <EntityTypeShape EntityType="pdiModel.mensagens" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="pdiModel.perfil" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="pdiModel.treinos" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="pdiModel.user_alimentacao" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="pdiModel.user_clinica" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="pdiModel.user_fotos" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="pdiModel.user_medicoes" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="pdiModel.user_peso" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="pdiModel.user_plano" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="pdiModel.user_treino" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+      <Diagram DiagramId="14e00ecad3804f55ba7cbf1512c72c88" Name="Diagram1">
+        <EntityTypeShape EntityType="pdiModel.mensagens" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pdiModel.perfil" Width="1.5" PointX="0.75" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="pdiModel.treinos" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="pdiModel.user_alimentacao" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="pdiModel.user_clinica" Width="1.5" PointX="3" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="pdiModel.user_fotos" Width="1.5" PointX="3" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="pdiModel.user_medicoes" Width="1.5" PointX="3" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="pdiModel.user_peso" Width="1.5" PointX="3" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="pdiModel.user_plano" Width="1.5" PointX="3" PointY="28.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="pdiModel.user_treino" Width="1.5" PointX="3" PointY="31" IsExpanded="true" />
+        <AssociationConnector Association="pdiModel.fk_mensagens_perfil1" ManuallyRouted="false" />
+        <AssociationConnector Association="pdiModel.fk_treinos_perfil1" ManuallyRouted="false" />
+        <AssociationConnector Association="pdiModel.fk_user_alimentacao_perfil1" ManuallyRouted="false" />
+        <AssociationConnector Association="pdiModel.fk_user_clinica_perfil1" ManuallyRouted="false" />
+        <AssociationConnector Association="pdiModel.fk_user_fotos_perfil1" ManuallyRouted="false" />
+        <AssociationConnector Association="pdiModel.fk_user_medicoes_perfil1" ManuallyRouted="false" />
+        <AssociationConnector Association="pdiModel.fk_user_peso_perfil1" ManuallyRouted="false" />
+        <AssociationConnector Association="pdiModel.fk_user_plano_perfil1" ManuallyRouted="false" />
+        <AssociationConnector Association="pdiModel.fk_user_treino_perfil1" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

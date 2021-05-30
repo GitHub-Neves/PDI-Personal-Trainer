@@ -15,10 +15,12 @@ namespace NS_Fitness_Website.Models
     public partial class user_fotos
     {
         public int id { get; set; }
-        public Nullable<int> userId { get; set; }
         public Nullable<System.DateTime> data { get; set; }
         public string frontal { get; set; }
         public string lateral { get; set; }
         public string traseira { get; set; }
+        public int perfil_id { get; set; }
+    
+        public virtual perfil perfil { get; set; }
     }
 }

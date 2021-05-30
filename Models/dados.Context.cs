@@ -13,10 +13,10 @@ namespace NS_Fitness_Website.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DatabasePDI : DbContext
+    public partial class DatabaseWebsite : DbContext
     {
-        public DatabasePDI()
-            : base("name=DatabasePDI")
+        public DatabaseWebsite()
+            : base("name=DatabaseWebsite")
         {
         }
     
